@@ -1,9 +1,17 @@
-var Metalsmith = require('metalsmith'),
+var metalsmith = require('metalsmith'),
     markdown   = require('metalsmith-markdown'),
-    templates  = require('metalsmith-templates');
+    templates  = require('metalsmith-templates'),
+    jade       = require('jade'),
+    handlebars = require('handlebars'),
+    moment     = require('moment'),
+    fs         = require('fs');
+
+
+handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/header.hbt').toString());
+handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/footer.hbt').toString());
 
 var siteBuild = metalsmith(__dirname)
-    .metadata({
+  	.metadata({
       site: {
         title: 'DamianFlynn.com',
         url: 'http://DamianFlynn.com'
@@ -11,7 +19,12 @@ var siteBuild = metalsmith(__dirname)
     })
     .source('./src')
     .destination('./build')
-    .use(templates('handlebars'))
+    .use(markdown())
+    .use(templates({
+      //engine: 'jade',
+      engine: 'handlebars',
+      moment: moment
+    }))
     .build(function (err) {
       if (err) {
         console.log(err);

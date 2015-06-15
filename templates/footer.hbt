@@ -1,0 +1,7 @@
+    </div>
+    {{!-- END .main-wrapper --}}
+    <footer>
+      Metalsmith test site
+    </footer>
+  </body>
+</html>
