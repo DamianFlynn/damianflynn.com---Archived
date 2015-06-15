@@ -3,35 +3,79 @@ var metalsmith  = require('metalsmith'),
     templates   = require('metalsmith-templates'),
     collections = require('metalsmith-collections'),
     permalinks  = require('metalsmith-permalinks'),
+    excerpts    = require('metalsmith-excerpts'),
+    paginate    = require('metalsmith-paginate'),
+    hljs        = require('highlight.js'),
     jade        = require('jade'),
     handlebars  = require('handlebars'),
     moment      = require('moment'),
+    metadata    = require('./config')(process.argv),
     fs          = require('fs');
 
 
-handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/header.hbt').toString());
-handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/footer.hbt').toString());
+handlebars.registerPartial('header',  fs.readFileSync(__dirname + '/templates/header.hbt').toString());
+handlebars.registerPartial('footer',  fs.readFileSync(__dirname + '/templates/footer.hbt').toString());
+handlebars.registerPartial('code',    fs.readFileSync(__dirname + '/templates/code.hbt').toString());
+handlebars.registerPartial('sidebar', fs.readFileSync(__dirname + '/templates/sidebar.hbt').toString());
+
+
+
+handlebars.registerHelper('link', function(path) {
+    return metadata.baseUrl + '/' + path;
+});
+
+handlebars.registerHelper('limit', function(collection, limit, start) {
+    var out   = [],
+        i,
+        c;
+
+    start = start || 0;
+
+    //for (i = c = 0; i < collection.length; i++) {
+        if (i >= start && c < limit+1) {
+            out.push(collection[i]);
+            c++;
+        }
+    //}
+
+    return out;
+});
+
 
 var siteBuild = metalsmith(__dirname)
-  	.metadata({
-      site: {
-        title: 'DamianFlynn.com',
-        url: 'http://DamianFlynn.com'
-      }
-    })
+    .metadata(metadata)
     //.source('./src')
     //.destination('./build')
     .use(collections({
-        pages: {
-            pattern: 'pages/*.md'
-        },
-        posts: {
-            pattern: 'posts/*.md',
-            sortBy: 'date',
-            reverse: true
+      entries: {
+           pattern: 'po*/*.md',
+           sortBy: 'date',
+           reverse: true
+       },
+       posts: {
+           pattern: 'posts/*.md',
+           sortBy: 'date',
+           reverse: true
+       },
+       pages: {
+           pattern: 'pages/*.md'
+       }
+    }))
+    .use(paginate({
+      perPage: 10,
+      path: ':collection/page'
+    }))
+    .use(excerpts())
+    .use(markdown({
+        gfm: true,
+        tables: true,
+        breaks: true,
+        smartLists: true,
+        smartypants: true,
+        highlight: function (code, lang, callback) {
+            return hljs.highlightAuto(code).value
         }
     }))
-    .use(markdown())
     .use(permalinks({
       pattern: ':collection/:title'
     }))

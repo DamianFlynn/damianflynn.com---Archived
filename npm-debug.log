@@ -11,29 +11,23 @@
 6 verbose install   [ 'metalsmith',
 6 verbose install     'metalsmith-markdown',
 6 verbose install     'metalsmith-templates',
-6 verbose install     'metalsmith-jade',
+6 verbose install     'metalsmith-collections',
+6 verbose install     'metalsmith-permalinks',
+6 verbose install     'metalsmith-paginate',
+6 verbose install     'metalsmith-excerpt',
+6 verbose install     'jade',
+6 verbose install     'handlebars',
 6 verbose install     'moment' ] ]
 7 info preinstall DamianFlynnBlog@1.0.0
 8 verbose readDependencies using package.json deps
 9 verbose already installed skipping metalsmith@^1.3.0 C:\WorkBench\OneDrive\code\blog.nodejs
 10 verbose already installed skipping metalsmith-markdown@^0.2.1 C:\WorkBench\OneDrive\code\blog.nodejs
-11 verbose already installed skipping metalsmith-templates@^0.4.0 C:\WorkBench\OneDrive\code\blog.nodejs
-12 verbose cache add [ 'metalsmith-jade@^0.2.1', null ]
-13 verbose cache add name=undefined spec="metalsmith-jade@^0.2.1" args=["metalsmith-jade@^0.2.1",null]
-14 verbose parsed url { protocol: null,
-14 verbose parsed url   slashes: null,
-14 verbose parsed url   auth: null,
-14 verbose parsed url   host: null,
-14 verbose parsed url   port: null,
-14 verbose parsed url   hostname: null,
-14 verbose parsed url   hash: null,
-14 verbose parsed url   search: null,
-14 verbose parsed url   query: null,
-14 verbose parsed url   pathname: 'metalsmith-jade@^0.2.1',
-14 verbose parsed url   path: 'metalsmith-jade@^0.2.1',
-14 verbose parsed url   href: 'metalsmith-jade@^0.2.1' }
-15 verbose already installed skipping moment@^2.10.3 C:\WorkBench\OneDrive\code\blog.nodejs
-16 verbose cache add name="metalsmith-jade" spec="^0.2.1" args=["metalsmith-jade","^0.2.1"]
+11 verbose already installed skipping metalsmith-templates@^0.7.0 C:\WorkBench\OneDrive\code\blog.nodejs
+12 verbose already installed skipping metalsmith-collections@^0.7.0 C:\WorkBench\OneDrive\code\blog.nodejs
+13 verbose already installed skipping metalsmith-permalinks@^0.4.0 C:\WorkBench\OneDrive\code\blog.nodejs
+14 verbose already installed skipping metalsmith-paginate@^0.3.0 C:\WorkBench\OneDrive\code\blog.nodejs
+15 verbose cache add [ 'metalsmith-excerpt@^1.0.0', null ]
+16 verbose cache add name=undefined spec="metalsmith-excerpt@^1.0.0" args=["metalsmith-excerpt@^1.0.0",null]
 17 verbose parsed url { protocol: null,
 17 verbose parsed url   slashes: null,
 17 verbose parsed url   auth: null,
@@ -43,67 +37,75 @@
 17 verbose parsed url   hash: null,
 17 verbose parsed url   search: null,
 17 verbose parsed url   query: null,
-17 verbose parsed url   pathname: '^0.2.1',
-17 verbose parsed url   path: '^0.2.1',
-17 verbose parsed url   href: '^0.2.1' }
-18 verbose addNamed [ 'metalsmith-jade', '^0.2.1' ]
-19 verbose addNamed [ null, '>=0.2.1-0 <0.3.0-0' ]
-20 silly lockFile 25e5a195-metalsmith-jade-0-2-1 metalsmith-jade@^0.2.1
-21 verbose lock metalsmith-jade@^0.2.1 C:\Users\Damian Flynn\AppData\Roaming\npm-cache\25e5a195-metalsmith-jade-0-2-1.lock
-22 silly addNameRange { name: 'metalsmith-jade',
-22 silly addNameRange   range: '>=0.2.1-0 <0.3.0-0',
-22 silly addNameRange   hasData: false }
-23 verbose request where is /metalsmith-jade
-24 verbose request registry https://registry.npmjs.org/
-25 verbose request id b1f5e6e02134790d
-26 verbose url raw /metalsmith-jade
-27 verbose url resolving [ 'https://registry.npmjs.org/', './metalsmith-jade' ]
-28 verbose url resolved https://registry.npmjs.org/metalsmith-jade
-29 verbose request where is https://registry.npmjs.org/metalsmith-jade
-30 info trying registry request attempt 1 at 12:59:28
-31 http GET https://registry.npmjs.org/metalsmith-jade
-32 http 200 https://registry.npmjs.org/metalsmith-jade
-33 silly registry.get cb [ 200,
-33 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-33 silly registry.get     etag: '"75HQ9Z365E6T47C3CPS5H2RIR"',
-33 silly registry.get     'content-type': 'application/json',
-33 silly registry.get     'cache-control': 'max-age=60',
-33 silly registry.get     'content-length': '15322',
-33 silly registry.get     'accept-ranges': 'bytes',
-33 silly registry.get     date: 'Mon, 15 Jun 2015 11:59:29 GMT',
-33 silly registry.get     via: '1.1 varnish',
-33 silly registry.get     age: '0',
-33 silly registry.get     connection: 'keep-alive',
-33 silly registry.get     'x-served-by': 'cache-lhr6327-LHR',
-33 silly registry.get     'x-cache': 'MISS',
-33 silly registry.get     'x-cache-hits': '0',
-33 silly registry.get     'x-timer': 'S1434369568.300418,VS0,VE835',
-33 silly registry.get     vary: 'Accept' } ]
-34 silly addNameRange number 2 { name: 'metalsmith-jade',
-34 silly addNameRange   range: '>=0.2.1-0 <0.3.0-0',
-34 silly addNameRange   hasData: true }
-35 silly addNameRange versions [ 'metalsmith-jade',
-35 silly addNameRange   [ '0.0.1',
-35 silly addNameRange     '0.0.2',
-35 silly addNameRange     '0.0.3',
-35 silly addNameRange     '0.0.4',
-35 silly addNameRange     '1.0.0',
-35 silly addNameRange     '1.0.1',
-35 silly addNameRange     '1.0.2',
-35 silly addNameRange     '2.0.0' ] ]
-36 silly lockFile 25e5a195-metalsmith-jade-0-2-1 metalsmith-jade@^0.2.1
-37 silly lockFile 25e5a195-metalsmith-jade-0-2-1 metalsmith-jade@^0.2.1
-38 error notarget No compatible version found: metalsmith-jade@'>=0.2.1-0 <0.3.0-0'
-38 error notarget Valid install targets:
-38 error notarget ["0.0.1","0.0.2","0.0.3","0.0.4","1.0.0","1.0.1","1.0.2","2.0.0"]
-38 error notarget
-38 error notarget This is most likely not a problem with npm itself.
-38 error notarget In most cases you or one of your dependencies are requesting
-38 error notarget a package version that doesn't exist.
-39 error System Windows_NT 6.2.9200
-40 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save-dev"
-41 error cwd C:\WorkBench\OneDrive\code\blog.nodejs
-42 error node -v v0.10.33
-43 error npm -v 1.4.28
-44 error code ETARGET
-45 verbose exit [ 1, true ]
+17 verbose parsed url   pathname: 'metalsmith-excerpt@^1.0.0',
+17 verbose parsed url   path: 'metalsmith-excerpt@^1.0.0',
+17 verbose parsed url   href: 'metalsmith-excerpt@^1.0.0' }
+18 verbose already installed skipping jade@^1.11.0 C:\WorkBench\OneDrive\code\blog.nodejs
+19 verbose already installed skipping handlebars@^3.0.0 C:\WorkBench\OneDrive\code\blog.nodejs
+20 verbose already installed skipping moment@^2.10.3 C:\WorkBench\OneDrive\code\blog.nodejs
+21 verbose cache add name="metalsmith-excerpt" spec="^1.0.0" args=["metalsmith-excerpt","^1.0.0"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '^1.0.0',
+22 verbose parsed url   path: '^1.0.0',
+22 verbose parsed url   href: '^1.0.0' }
+23 verbose addNamed [ 'metalsmith-excerpt', '^1.0.0' ]
+24 verbose addNamed [ null, '>=1.0.0-0 <2.0.0-0' ]
+25 silly lockFile 18a9f6f2-metalsmith-excerpt-1-0-0 metalsmith-excerpt@^1.0.0
+26 verbose lock metalsmith-excerpt@^1.0.0 C:\Users\Damian Flynn\AppData\Roaming\npm-cache\18a9f6f2-metalsmith-excerpt-1-0-0.lock
+27 silly addNameRange { name: 'metalsmith-excerpt',
+27 silly addNameRange   range: '>=1.0.0-0 <2.0.0-0',
+27 silly addNameRange   hasData: false }
+28 verbose request where is /metalsmith-excerpt
+29 verbose request registry https://registry.npmjs.org/
+30 verbose request id 5b840b91cf354d66
+31 verbose url raw /metalsmith-excerpt
+32 verbose url resolving [ 'https://registry.npmjs.org/', './metalsmith-excerpt' ]
+33 verbose url resolved https://registry.npmjs.org/metalsmith-excerpt
+34 verbose request where is https://registry.npmjs.org/metalsmith-excerpt
+35 info trying registry request attempt 1 at 16:54:14
+36 http GET https://registry.npmjs.org/metalsmith-excerpt
+37 http 200 https://registry.npmjs.org/metalsmith-excerpt
+38 silly registry.get cb [ 200,
+38 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+38 silly registry.get     etag: '"7O3FVI418Q7N4UX07OL9K2F5S"',
+38 silly registry.get     'content-type': 'application/json',
+38 silly registry.get     'cache-control': 'max-age=60',
+38 silly registry.get     'content-length': '3656',
+38 silly registry.get     'accept-ranges': 'bytes',
+38 silly registry.get     date: 'Mon, 15 Jun 2015 15:54:15 GMT',
+38 silly registry.get     via: '1.1 varnish',
+38 silly registry.get     age: '0',
+38 silly registry.get     connection: 'keep-alive',
+38 silly registry.get     'x-served-by': 'cache-lhr6320-LHR',
+38 silly registry.get     'x-cache': 'MISS',
+38 silly registry.get     'x-cache-hits': '0',
+38 silly registry.get     'x-timer': 'S1434383655.083083,VS0,VE181',
+38 silly registry.get     vary: 'Accept' } ]
+39 silly addNameRange number 2 { name: 'metalsmith-excerpt',
+39 silly addNameRange   range: '>=1.0.0-0 <2.0.0-0',
+39 silly addNameRange   hasData: true }
+40 silly addNameRange versions [ 'metalsmith-excerpt', [ '0.0.1', '0.1.0', '0.1.1' ] ]
+41 silly lockFile 18a9f6f2-metalsmith-excerpt-1-0-0 metalsmith-excerpt@^1.0.0
+42 silly lockFile 18a9f6f2-metalsmith-excerpt-1-0-0 metalsmith-excerpt@^1.0.0
+43 error notarget No compatible version found: metalsmith-excerpt@'>=1.0.0-0 <2.0.0-0'
+43 error notarget Valid install targets:
+43 error notarget ["0.0.1","0.1.0","0.1.1"]
+43 error notarget
+43 error notarget This is most likely not a problem with npm itself.
+43 error notarget In most cases you or one of your dependencies are requesting
+43 error notarget a package version that doesn't exist.
+44 error System Windows_NT 6.2.9200
+45 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save-dev"
+46 error cwd C:\WorkBench\OneDrive\code\blog.nodejs
+47 error node -v v0.10.33
+48 error npm -v 1.4.28
+49 error code ETARGET
+50 verbose exit [ 1, true ]
