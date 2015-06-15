@@ -19,8 +19,8 @@ var siteBuild = metalsmith(__dirname)
         url: 'http://DamianFlynn.com'
       }
     })
-    .source('./src')
-    .destination('./build')
+    //.source('./src')
+    //.destination('./build')
     .use(collections({
         pages: {
             pattern: 'pages/*.md'
