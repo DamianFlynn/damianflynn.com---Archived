@@ -1,6 +1,8 @@
 var metalsmith  = require('metalsmith'),
     markdown    = require('metalsmith-markdown'),
     templates   = require('metalsmith-templates'),
+    sass        = require('metalsmith-sass'),
+    bourbon     = require('node-bourbon'),
     collections = require('metalsmith-collections'),
     permalinks  = require('metalsmith-permalinks'),
     excerpts    = require('metalsmith-excerpts'),
@@ -48,17 +50,17 @@ var siteBuild = metalsmith(__dirname)
     //.destination('./build')
     .use(collections({
       entries: {
-           pattern: 'po*/*.md',
+           pattern: 'content/po*/*.md',
            sortBy: 'date',
            reverse: true
        },
        posts: {
-           pattern: 'posts/*.md',
+           pattern: 'content/posts/*.md',
            sortBy: 'date',
            reverse: true
        },
        pages: {
-           pattern: 'pages/*.md'
+           pattern: 'content/pages/*.md'
        }
     }))
     .use(paginate({
@@ -83,6 +85,10 @@ var siteBuild = metalsmith(__dirname)
       //engine: 'jade',
       engine: 'handlebars',
       moment: moment
+    }))
+    .use(sass({
+      includePaths: bourbon.includePaths,
+      outputStyle: 'compressed'
     }))
     .build(function (err) {
       if (err) {

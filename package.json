@@ -2,6 +2,8 @@
   "name": "DamianFlynnBlog",
   "version": "1.0.0",
   "description": "Static Site version of DamainFlynn.com Blog",
+  "homepage": "https://github.com/DamainFlynn/damianflynn.com",
+  "author": "Damian Flynn <blog@damianflynn.com>",
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +15,14 @@
   "bugs": {
     "url": "https://github.com/DamainFlynn/damianflynn.com/issues"
   },
-  "homepage": "https://github.com/DamainFlynn/damianflynn.com",
-  "author": "Damian Flynn <blog@damianflynn.com>",
   "license": "MIT",
+  "main": "./core/index",
+  "scripts": {
+    "start": "node build"
+  },
+  "engines": {
+    "node": "~0.10.0 || ~0.12.0"
+  },
   "dependencies": {
     "metalsmith": "^1.3.0",
     "metalsmith-markdown": "^0.2.1",
@@ -24,9 +31,11 @@
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-paginate": "^0.3.0",
     "metalsmith-excerpts": "^1.0.0",
+    "metalsmith-sass": "^1.2.1",
     "jade": "^1.11.0",
     "handlebars": "^3.0.0",
     "highlight.js": "^8.6.0",
+    "node-bourbon": "^4.2.3",
     "moment": "^2.10.3"
   }
 }
