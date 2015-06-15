@@ -1,10 +1,12 @@
-var metalsmith = require('metalsmith'),
-    markdown   = require('metalsmith-markdown'),
-    templates  = require('metalsmith-templates'),
-    jade       = require('jade'),
-    handlebars = require('handlebars'),
-    moment     = require('moment'),
-    fs         = require('fs');
+var metalsmith  = require('metalsmith'),
+    markdown    = require('metalsmith-markdown'),
+    templates   = require('metalsmith-templates'),
+    collections = require('metalsmith-collections'),
+    permalinks  = require('metalsmith-permalinks'),
+    jade        = require('jade'),
+    handlebars  = require('handlebars'),
+    moment      = require('moment'),
+    fs          = require('fs');
 
 
 handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/header.hbt').toString());
@@ -19,7 +21,20 @@ var siteBuild = metalsmith(__dirname)
     })
     .source('./src')
     .destination('./build')
+    .use(collections({
+        pages: {
+            pattern: 'pages/*.md'
+        },
+        posts: {
+            pattern: 'posts/*.md',
+            sortBy: 'date',
+            reverse: true
+        }
+    }))
     .use(markdown())
+    .use(permalinks({
+      pattern: ':collection/:title'
+    }))
     .use(templates({
       //engine: 'jade',
       engine: 'handlebars',
