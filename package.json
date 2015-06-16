@@ -1,13 +1,14 @@
 {
-  "name": "DamianFlynnBlog",
-  "version": "1.0.0",
+  "name": "damianflynncom-metalsmith",
+  "version": "1.1.0",
   "description": "Static Site version of DamainFlynn.com Blog",
-  "homepage": "https://github.com/DamainFlynn/damianflynn.com",
   "author": "Damian Flynn <blog@damianflynn.com>",
-  "main": "build.js",
+  "homepage": "https://github.com/DamainFlynn/damianflynn.com",
   "scripts": {
+    "start": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "build.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/DamainFlynn/damianflynn.com.git"
@@ -15,11 +16,12 @@
   "bugs": {
     "url": "https://github.com/DamainFlynn/damianflynn.com/issues"
   },
+  "keywords": [
+    "blog",
+    "metalsmith",
+    "Static Site"
+  ],
   "license": "MIT",
-  "main": "./core/index",
-  "scripts": {
-    "start": "node build"
-  },
   "engines": {
     "node": "~0.10.0 || ~0.12.0"
   },

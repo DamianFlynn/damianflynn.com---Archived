@@ -1,12 +1,12 @@
 
 var prod = {
-        'sitename': 'Damian Flynn',
-        'baseUrl': 'http://DamianFlynn.com',
+        'sitename': 'DamianFlynn.com',
+        'baseUrl': '',
         'description': 'Static Blog Site',
         'isDev': false
     },
     dev = {
-        'sitename': 'Damian Flynn (DEV)',
+        'sitename': 'DamianFlynn.com (DEV)',
         'baseUrl': 'http://localhost:3000',
         'description': 'Development Blog',
         'isDev': true
@@ -14,11 +14,11 @@ var prod = {
 
 module.exports = function(args) {
     'use strict';
-    var config = dev;
+    var config = prod;
 
     args.forEach(function(val) {
-        if (val === '--prod' || val === '-p') {
-            config = prod;
+        if (val === '--dev' || val === '-d') {
+            config = dev;
         }
     });
 
