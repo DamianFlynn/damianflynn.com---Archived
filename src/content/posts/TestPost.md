@@ -1,7 +1,7 @@
 ---
 title: test post
-publishDate: 2015-06-15
-modifyDate: 2015-06-15
+publishpublishDate: 2015-06-15
+modifypublishDate: 2015-06-15
 author: Damian Flynn
 template: post.hbt
 ---

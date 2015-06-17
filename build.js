@@ -49,13 +49,8 @@ var siteBuild = metalsmith(__dirname)
     //.source('./src')
     //.destination('./build')
     .use(collections({
-      entries: {
-           pattern: 'content/po*/*.md',
-           sortBy: 'date',
-           reverse: true
-       },
        posts: {
-           pattern: 'content/posts/*.md',
+           pattern: 'content/posts/*.markdown',
            sortBy: 'date',
            reverse: true
        },

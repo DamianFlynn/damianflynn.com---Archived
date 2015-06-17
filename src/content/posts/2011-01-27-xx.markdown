@@ -1,0 +1,165 @@
+---
+author: Damian.Flynn
+comments: true
+publishDate: 2011-01-27 23:00:00+00:00
+template: post.hbt
+slug: xx
+title: Enable PS Remoting using GPO's
+wordpress_id: 41
+categories:
+- Blog
+tags:
+- Clients
+- GPO
+- PowerShell
+- WS/SC
+---
+
+Every day the workload grows, and the number of servers I find a requirement to connect with to do some from of management or diagnostics just keeps growing, which means my desktop has multiple connections to remote apps, remote desktops and many different PowerShell windows, making the experience a mitigated nightmare.
+
+**So - Today, It all stops!**
+
+Today, I am going to change tactics and start working a lot smarter, and figure what better way to announce my happiness, than share it with you! What am I talking about - PowerShell remoting of course.
+
+## Test Drive
+
+Ok, before we turn this on for all our servers, we better give this a quick pilot run. So for the last time make an RDP connection to one of the nodes you frequent regularly and pop open a PowerShell session.
+
+Now, run a quick check to see if WinRM is listening with the following command
+    
+    winrm e winrmconfiglisteners
+
+
+
+
+  
+I expect you will get nothing back if there is nothing configured to use the WinRM service yet. Now, in PowerShell 2.0 we have a magic new command  
+
+    
+    Enable-PSRemoting
+
+
+
+
+This will kick off a command to launch and configure the WinRM service (which we could have done ourselves with winrm -quickconfig) , you need to agree with the prompts and before you can blink WinRM will be setup and ready for remote Management.
+
+
+
+
+If you are curious what just happened, then run the WinRM check again to see the fruits of your work
+
+
+
+
+[![clip_image001](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image001_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0011.png)
+
+
+
+
+Right, that was easy, now we need to see the value of what has just been completed.
+
+
+
+
+Switch back to your workstation, and assuming no firewalls etc. are in the way (we are using TCP 5985 by default if your curious). First we are going to store our network credentials in a variable, I used a simple name of whoami.
+    
+    $whoami = Get-Credential
+
+
+
+
+  
+Now, time for the magic wand, we will enter a new PowerShell session, on our remote machine  
+
+    
+    Enter-PSSession -ComputerName [targetmachine] -Credential $whoami -Authentication Default
+
+
+
+
+[![clip_image002](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image002_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0021.png)
+
+
+
+
+And in a few seconds your shell will be prefixed with the name of the remote node, and you have magically transported to the other side. Sweet or what!
+
+
+
+
+## Cool, More Control
+
+
+
+
+I am going to use the magic of Group Polices to turn on this service on all the nodes I am planning to manage. To do this I will create a new Policy and Target the policy to the systems we need to manage. I am assuming you have access to Group Policy to do this, or know the right connections!
+
+
+
+
+With the Group Policy Management Console, Create a new Group Policy Object, and expand **_Computer Configuration->Policies->Administrative templates->Windows Components->WinRM_**
+
+
+
+
+[![clip_image003](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image003_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0031.png)
+
+
+
+
+There are a few options in here, but the minimum we need is just to enable the setting under “**Allow automatic configuration of listeners**” and list the IP's your listening on - I just use **'*'** for all addresses.
+
+
+
+
+[![clip_image004](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image004_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0041.png)
+
+
+
+
+Ok, that was easy; now just one last minor thing, the WinRM service are by default not started on Windows client operating systems. If your concerned only about servers then we don’t need to deal with this step.
+
+
+
+
+To configure the WinRM service to start automatically, navigate to **Computer Configuration->Policies>Windows Settings>Security Settings>System Services>Windows Remote Management**
+
+
+
+
+[![clip_image005](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image005_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0051.png)
+
+
+
+
+Double click on **Windows Remote Management **and configure the service startup mode to "**Automatic**":
+
+
+
+
+[![clip_image006](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image006_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0061.png)
+
+
+
+
+That's it, all set, Just target the policy on the machines you want to manage and we are in good shape.
+
+
+
+
+Use the same commands as before to see if WinRM listeners are up and running, plus you will see that the Source is via GPO!
+
+
+
+
+[![clip_image007](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image007_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/clip_image0071.png)
+
+
+
+
+## Summary
+
+
+
+
+Well, that’s it, the cloaks are off, and from now on, our daily management routine just got a whole lot less clutter!!

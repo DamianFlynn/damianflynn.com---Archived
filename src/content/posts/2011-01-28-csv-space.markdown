@@ -1,0 +1,25 @@
+---
+author: Damian.Flynn
+comments: true
+publishDate: 2011-01-28 23:06:00+00:00
+template: post.hbt
+slug: csv-space
+title: CSV Space?
+wordpress_id: 43
+categories:
+- Blog
+tags:
+- Cloud
+- PowerShell
+- WS/SC
+---
+
+So the first order of the day is to check the space on our CSV Volumes of our Hyper-V Clusters. This has just become so much easier now that we can use PowerShell remoting.
+
+I have a simple function created that will enumerate all the CSV Volumes on the server, and report out in a table the Name, Space and Owner node details.
+
+With this function, we can use the remote shell to quickly get the status on our storage space
+
+[![image](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/image_thumb1.png)](http://blogstorage.damianflynn.com/wp-content/uploads/2011/01/image1.png)
+
+Got to love it!
