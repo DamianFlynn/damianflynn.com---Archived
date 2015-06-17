@@ -20,28 +20,40 @@ handlebars.registerPartial('footer',  fs.readFileSync(__dirname + '/templates/fo
 handlebars.registerPartial('code',    fs.readFileSync(__dirname + '/templates/code.hbt').toString());
 handlebars.registerPartial('sidebar', fs.readFileSync(__dirname + '/templates/sidebar.hbt').toString());
 
+handlebars.registerHelper('xmldate', function(date) {
+    return moment(date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+});
 
+handlebars.registerHelper('sitemapdate', function(date) {
+    return moment(date).format('YYYY-MM-DD');
+});
+
+handlebars.registerHelper('date', function(date) {
+    return moment(date).format('Do MMMM YYYY');
+});
 
 handlebars.registerHelper('link', function(path) {
     return metadata.baseUrl + '/' + path;
 });
 
+
 handlebars.registerHelper('limit', function(collection, limit, start) {
     var out   = [],
-        i,
-        c;
+        i, c;
 
     start = start || 0;
 
-    //for (i = c = 0; i < collection.length; i++) {
+    for (i = c = 0; i < collection.length; i++) {
         if (i >= start && c < limit+1) {
             out.push(collection[i]);
             c++;
         }
-    //}
+    }
 
     return out;
 });
+
+
 
 
 var siteBuild = metalsmith(__dirname)
@@ -50,13 +62,18 @@ var siteBuild = metalsmith(__dirname)
     //.destination('./build')
     .use(collections({
        posts: {
-           pattern: 'content/posts/*.markdown',
+           pattern: 'content/posts/*.md',
            sortBy: 'date',
            reverse: true
        },
        pages: {
            pattern: 'content/pages/*.md'
-       }
+       },
+       entries: {
+           pattern: 'content/po*/*.md',
+           sortBy: 'date',
+           reverse: true
+       },
     }))
     .use(paginate({
       perPage: 10,
