@@ -54,6 +54,16 @@ handlebars.registerHelper('limit', function(collection, limit, start) {
 });
 
 
+var robots = function(opts) {
+  return function(files, metalsmith, done) {
+    fs.readFile(opts.source, function(err, data) {
+      files['robots.txt'] = {
+        contents: data
+      }
+      done();
+    })
+  }
+}
 
 
 var siteBuild = metalsmith(__dirname)
@@ -90,6 +100,9 @@ var siteBuild = metalsmith(__dirname)
             return hljs.highlightAuto(code).value
         }
     }))
+    //.use(robots({
+    //  source: 'sample-robots.txt'
+    //}))
     .use(permalinks({
       pattern: ':collection/:title'
     }))
