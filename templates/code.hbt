@@ -3,7 +3,7 @@
 <div class="header__code">
     <pre>
         <code>
-  return function(files, metalsmith, done) {
+return function(files, metalsmith, done) {
     var metadata    = metalsmith.metadata(),
         collections = metadata.collections,
         colName, file, filePath;

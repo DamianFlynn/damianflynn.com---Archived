@@ -25,17 +25,17 @@
         </div>
     </li>
     {{/each}}
-
+    
     {{#if this.pagination}}
         <nav class="pagination">
             {{#if this.pagination.next}}
                 <a href="{{link this.pagination.next.path}}" class="pagination__link--older">&lt; Older</a>
             {{/if}}
-
+        
             {{#if this.pagination.prev}}
                 <a href="{{link this.pagination.prev.path}}" class="pagination__link--newer">Newer &gt;</a>
             {{/if}}
-
+            
         </nav>
     {{/if}}
 </ul>
