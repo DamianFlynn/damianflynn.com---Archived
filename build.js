@@ -54,6 +54,11 @@ handlebars.registerHelper('limit', function(collection, limit, start) {
 });
 
 
+var plugin = function(files, metalsmith, done) {
+    console.log(files);
+    done();
+};
+
 var robots = function(opts) {
   return function(files, metalsmith, done) {
     fs.readFile(opts.source, function(err, data) {
@@ -89,6 +94,7 @@ var siteBuild = metalsmith(__dirname)
       perPage: 10,
       path: ':collection/page'
     }))
+    .use(plugin)
     .use(excerpts())
     .use(markdown({
         gfm: true,
