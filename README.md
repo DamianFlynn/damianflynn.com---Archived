@@ -17,7 +17,3 @@ If you encounter timeout issues on deployment, add a `SCM_COMMAND_IDLE_TIMEOUT` 
 ## Additional information
 
 For additional information, see [Deploying Jekyll to Windows Azure App Services](http://rimdev.io/deploying-jekyll-to-windows-azure-app-services/).
-
-## License
-
-MIT

@@ -1,0 +1,29 @@
+# Site settings
+description: A blog from Damian Flynn, a Microsoft MVP and Cisco Champion
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: http://damianflynn.azurewebsites.net
+safe: false
+title: Technical Blog
+
+# Font Awesome version
+fa_version: 4.6.0
+
+# Build settings
+timezone: America/New_York
+permalink: /:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins
+# sitemap: false in front matter of page to exclude
+gems:
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# will convert @twitter-handle to the full twitter link in a post
+jekyll-mentions: https://twitter.com
