@@ -4,6 +4,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://damianflynn.azurewebsites.net
 safe: false
 title: Technical Blog
+default_image: /images/default/damianflynn-surface.jpg
 
 # Font Awesome version
 fa_version: 4.6.0
@@ -27,3 +28,14 @@ gems:
 
 # will convert @twitter-handle to the full twitter link in a post
 jekyll-mentions: https://twitter.com
+
+# User settings
+username: DamianFlynn
+user_description: Making Incrediable Technology, Increadibly Simple
+user_title: Damian Flynn
+user_logo: /assets/img/logos/damianflynn-logo-text-white.svg
+user_icon: /assets/img/logos/damianflynn-icon-white.svg
+email: info@damianflynn.com
+twitter_username: damian_flynn
+github_username:  damianflynn
+disqus_username: damian_flynn
