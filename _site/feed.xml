@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2017-06-27T14:33:21+00:00</updated><id>http://0.0.0.0:4000/</id><title type="html">Technical Blog</title><subtitle>A blog from Damian Flynn, a Microsoft MVP and Cisco Champion</subtitle><entry><title type="html">Building a better blog; an experiment in UI and UX</title><link href="http://0.0.0.0:4000/building-a-better-blog/" rel="alternate" type="text/html" title="Building a better blog; an experiment in UI and UX" /><published>2017-06-25T18:00:00+00:00</published><updated>2017-06-25T18:00:00+00:00</updated><id>http://0.0.0.0:4000/building-a-better-blog</id><content type="html" xml:base="http://0.0.0.0:4000/building-a-better-blog/">My initial blog had some nice features, but really didn't do anything to place my content first. Was it really important that my logo be prominently placed? Not really, I am recoding both technical, and product related tips, tricks and news, and not focusing on how to keep a Wordpress site secure, and more importantly working reliably, So I have chosen to leverage static site technology, and ensure the layout focuses on what is truly important, the content.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2017-06-27T22:00:25+00:00</updated><id>http://0.0.0.0:4000/</id><title type="html">Technical Blog</title><subtitle>A blog from Damian Flynn, a Microsoft MVP and Cisco Champion</subtitle><entry><title type="html">Building a better blog; an experiment in UI and UX</title><link href="http://0.0.0.0:4000/building-a-better-blog/" rel="alternate" type="text/html" title="Building a better blog; an experiment in UI and UX" /><published>2017-06-25T18:00:00+00:00</published><updated>2017-06-25T18:00:00+00:00</updated><id>http://0.0.0.0:4000/building-a-better-blog</id><content type="html" xml:base="http://0.0.0.0:4000/building-a-better-blog/">My initial blog had some nice features, but really didn't do anything to place my content first. Was it really important that my logo be prominently placed? Not really, I am recoding both technical, and product related tips, tricks and news, and not focusing on how to keep a Wordpress site secure, and more importantly working reliably, So I have chosen to leverage static site technology, and ensure the layout focuses on what is truly important, the content.
 
 ## The article should have your sole attention
 
@@ -18,4 +18,42 @@ Curious about who we are? As you move back up the article, a footer with light n
 
 ## What's next?
 
-I am planning other features, including posting events; and looking for feedback? What do you think?</content><author><name></name></author><category term="Jekyll" /><category term="UI" /><category term="UX" /><summary type="html">My initial blog had some nice features, but really didn’t do anything to place my content first. Was it really important that my logo be prominently placed? Not really, I am recoding both technical, and product related tips, tricks and news, and not focusing on how to keep a Wordpress site secure, and more importantly working reliably, So I have chosen to leverage static site technology, and ensure the layout focuses on what is truly important, the content.</summary></entry></feed>
+I am planning other features, including posting events; and looking for feedback? What do you think?</content><author><name></name></author><category term="Jekyll" /><category term="UI" /><category term="UX" /><summary type="html">My initial blog had some nice features, but really didn’t do anything to place my content first. Was it really important that my logo be prominently placed? Not really, I am recoding both technical, and product related tips, tricks and news, and not focusing on how to keep a Wordpress site secure, and more importantly working reliably, So I have chosen to leverage static site technology, and ensure the layout focuses on what is truly important, the content.</summary></entry><entry><title type="html">Adding Mermaid support to the site</title><link href="http://0.0.0.0:4000/adding-mermaids-back-in-the-game/" rel="alternate" type="text/html" title="Adding Mermaid support to the site" /><published>2017-06-23T15:25:51+00:00</published><updated>2017-06-23T15:25:51+00:00</updated><id>http://0.0.0.0:4000/adding-mermaids-back-in-the-game</id><content type="html" xml:base="http://0.0.0.0:4000/adding-mermaids-back-in-the-game/">&lt;p&gt;A picture is worth a thousand words, so I assume a diagram is worth a &lt;strong&gt;billion&lt;/strong&gt; words. Expressing our ideas is important and our blog is an outlet to not only share with our teammates, but the broader community of readers. &lt;a href=&quot;https://knsv.github.io/mermaid/&quot;&gt;Mermaid&lt;/a&gt; is a simple markdown based diagramming language with a compelling result.&lt;/p&gt;
+
+&lt;p&gt;Placing the following html in our posts…&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mermaid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;results in the wonderful diagram below.&lt;/p&gt;
+
+&lt;div class=&quot;mermaid&quot; style=&quot;text-align:center&quot;&gt;
+graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+&lt;/div&gt;
+
+&lt;p&gt;Additionally, I can create diagrams like this.&lt;/p&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&amp;gt;John: Hello John, how are you?
+    loop Healthcheck
+        John-&amp;gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts prevail...
+    John--&amp;gt;Alice: Great!
+    John-&amp;gt;Bob: How about you?
+    Bob--&amp;gt;John: Jolly good!
+&lt;/div&gt;</content><author><name></name></author><category term="Jekyll" /><summary type="html">A picture is worth a thousand words, so I assume a diagram is worth a billion words. Expressing our ideas is important and our blog is an outlet to not only share with our teammates, but the broader community of readers. Mermaid is a simple markdown based diagramming language with a compelling result. Placing the following html in our posts… &amp;lt;div class=&quot;mermaid&quot;&amp;gt; graph TD; A--&amp;gt;B; A--&amp;gt;C; B--&amp;gt;D; C--&amp;gt;D; &amp;lt;/div&amp;gt; results in the wonderful diagram below. graph TD; A--&amp;gt;B; A--&amp;gt;C; B--&amp;gt;D; C--&amp;gt;D; Additionally, I can create diagrams like this. sequenceDiagram participant Alice participant Bob Alice-&amp;gt;John: Hello John, how are you? loop Healthcheck John-&amp;gt;John: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--&amp;gt;Alice: Great! John-&amp;gt;Bob: How about you? Bob--&amp;gt;John: Jolly good!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://farm3.staticflickr.com/2127/2067252947_fcaa9ca286_z_d.jpg?zz=1" /></entry></feed>
