@@ -10,4 +10,522 @@
 			<priority>0.8</priority>
 	  </url>
 	
+	  <url>
+			<loc>http://0.0.0.0:4000/adding-mermaids-back-in-the-game/</loc>
+			<lastmod>2017-06-23</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Webinar-Savision-Passport-To-SCOM-2016/</loc>
+			<lastmod>2017-01-19</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Webinar-NLWUG-Azure-Pack-vs-Stack/</loc>
+			<lastmod>2017-01-11</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Conference-MMS-2017-Minesota/</loc>
+			<lastmod>2017-01-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Conference-Cloud-And-Datacenter-2017-Duseldorf/</loc>
+			<lastmod>2017-01-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Conference-NICCONF-2017-Oslo/</loc>
+			<lastmod>2017-01-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/OMS-and-Teams-Alerts/</loc>
+			<lastmod>2016-11-22</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Conference-Experts-Live-Europer-2017-Berlin/</loc>
+			<lastmod>2016-11-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Conference-experts-live-nl-2016/</loc>
+			<lastmod>2016-11-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/user-group-webinar/</loc>
+			<lastmod>2016-10-31</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/system-center-universe-2016-iot-in-the-enterprise/</loc>
+			<lastmod>2016-09-02</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/</loc>
+			<lastmod>2016-09-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Starting-in-Incubation/</loc>
+			<lastmod>2016-08-24</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/Unemployeed-After-18-Years/</loc>
+			<lastmod>2016-08-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/azure-pack-adfs-token/</loc>
+			<lastmod>2016-02-04</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/PowerShell-AD-GUID-Base64/</loc>
+			<lastmod>2015-12-10</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/PowerShell-Bing-Wallpaper/</loc>
+			<lastmod>2015-12-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/register-a-github-account/</loc>
+			<lastmod>2015-11-11</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/updating-a-forked-repo/</loc>
+			<lastmod>2015-11-07</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/stopping-sccm-endpoint-protection/</loc>
+			<lastmod>2015-10-22</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/get-allocated-vlans-from-scvmm/</loc>
+			<lastmod>2015-10-21</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/exchange-mail-delivery-latency/</loc>
+			<lastmod>2015-10-05</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/signiant-adfs3-federation/</loc>
+			<lastmod>2015-09-29</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/bitlocker-key-automation/</loc>
+			<lastmod>2015-09-24</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/windows-2003-support-is-over/</loc>
+			<lastmod>2015-07-14</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/adfs-publishing-via-azure-traffic-manager/</loc>
+			<lastmod>2015-03-04</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/techdays-online-uk-2015-2/</loc>
+			<lastmod>2015-02-02</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cisco-champion-2015/</loc>
+			<lastmod>2015-01-20</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sma-get-orchestratorrunbook-cannot-bind/</loc>
+			<lastmod>2015-01-20</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/2015-microsoft-mvp/</loc>
+			<lastmod>2015-01-19</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/powershell-deployment-toolkit-v3-0-desired-state-configuration/</loc>
+			<lastmod>2014-10-27</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/configuring-service-management-automation-repeating-schedules/</loc>
+			<lastmod>2014-10-14</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/downloading-scom-management-packs-using-powershell/</loc>
+			<lastmod>2014-08-26</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/software-defined-networking-with-windows-server-and-system-center-jump-start/</loc>
+			<lastmod>2014-03-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/preview-azure-with-mpls/</loc>
+			<lastmod>2014-02-21</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/connecting-to-azure-with-mpls/</loc>
+			<lastmod>2014-02-20</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/book-3-microsoft-system-center-building-a-virtualized-network-solution/</loc>
+			<lastmod>2014-02-19</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/system-center-2012-r2-and-sql-server/</loc>
+			<lastmod>2014-02-12</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/system-centre-universe-2014-north-america/</loc>
+			<lastmod>2014-01-30</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/techdays-berlin-2013-deliver-your-cloud-like-a-hoster/</loc>
+			<lastmod>2014-01-15</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/system-centre-universe-2014-dach/</loc>
+			<lastmod>2014-01-14</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cloud-os-community-windows-azure-pack-2013-introduction/</loc>
+			<lastmod>2014-01-12</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/mvp-2014-system-center-cloud-and-datacenter/</loc>
+			<lastmod>2014-01-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/site-updates/</loc>
+			<lastmod>2013-12-06</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/tech-days-online-uk-2013/</loc>
+			<lastmod>2013-12-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/joining-petri-co-il-as-wssc-author/</loc>
+			<lastmod>2013-07-18</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/r2-preview-new-free-offerings/</loc>
+			<lastmod>2013-07-11</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/managing-hyper-v-nvgre-with-powershell/</loc>
+			<lastmod>2013-07-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/mp-control-manager-not-responding/</loc>
+			<lastmod>2013-07-05</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cisco-nexus-1000v-hyper-v/</loc>
+			<lastmod>2013-07-05</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/microsoft-is-retiring-the-technet-subscription-service/</loc>
+			<lastmod>2013-07-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/unravelling-the-network/</loc>
+			<lastmod>2013-06-11</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/news-scu2013-speaker/</loc>
+			<lastmod>2013-06-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/powershell-deployment-toolkit/</loc>
+			<lastmod>2013-04-25</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/free-deep-dive-sessions/</loc>
+			<lastmod>2013-04-23</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/windows-server-2012-hyper-v-installation-and-configuration-guide/</loc>
+			<lastmod>2013-03-25</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/nexus-1000v-online-lab/</loc>
+			<lastmod>2013-03-07</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/vmm-stop-the-refreshers-to-remove-locked-systems/</loc>
+			<lastmod>2013-03-06</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cisco-nexus-1000v-overview/</loc>
+			<lastmod>2013-03-05</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cisco-nexus-1000v-public-beta-program/</loc>
+			<lastmod>2013-03-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/im-back/</loc>
+			<lastmod>2013-02-28</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/mvp-2013-system-center-cloud-and-datacenter/</loc>
+			<lastmod>2013-01-01</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/exchange-health/</loc>
+			<lastmod>2011-01-12</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/microsoft-mvp-vm-2011/</loc>
+			<lastmod>2011-01-03</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/automation-engine-decisions/</loc>
+			<lastmod>2010-12-15</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/deploying-vmmssp-2-0-to-our-lab/</loc>
+			<lastmod>2010-10-19</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sagetv-and-dvblogic-live-tv/</loc>
+			<lastmod>2010-10-10</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sagetv-and-dvblogic-sagetv/</loc>
+			<lastmod>2010-10-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sagetv-with-dvblogic-install-tvsource/</loc>
+			<lastmod>2010-10-06</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/evolving-the-cloud/</loc>
+			<lastmod>2010-10-06</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sagetv-with-dvblogic-2/</loc>
+			<lastmod>2010-10-04</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/another-case-study-on-our-evolving-cloud/</loc>
+			<lastmod>2010-07-19</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/sagetv-and-hi-def-satellite-tv/</loc>
+			<lastmod>2009-08-08</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
+	  <url>
+			<loc>http://0.0.0.0:4000/cloud-case-study-published/</loc>
+			<lastmod>2008-11-30</lastmod>
+			<changefreq>monthly</changefreq>
+			<priority>0.8</priority>
+	  </url>
+	
 </urlset>

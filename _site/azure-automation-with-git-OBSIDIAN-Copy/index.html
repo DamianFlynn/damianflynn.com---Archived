@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="sitecode-Gs3dOwTVjMXiqzEPmmVf8">
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@damian_flynn">
+  <meta name="twitter:image" property="og:image" content="AzureAutomationCI_banner.jpg">
+  <meta name="twitter:title" content="SMA: GIT Version Control Integration - Damian Flynn ">
+  <meta name="twitter:description" content="At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing how to implement a co...">
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/">
+  <meta name="og:title" content="SMA: GIT Version Control Integration - Damian Flynn">
+  <meta property="og:image" content="AzureAutomationCI_banner.jpg">
+  <meta name="og:description" content="At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing how to implement a co...">
+  <meta property="og:site_name" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+
+  <!-- Social: Google+ / Schema.org  -->
+  <meta itemprop="name" content="SMA: GIT Version Control Integration">
+  <meta itemprop="description" content="At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing how to implement a co...">
+  <meta itemprop="image" content="AzureAutomationCI_banner.jpg">
+
+  <title>SMA: GIT Version Control Integration</title>
+  <meta name="description" content="At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing how to implement a co...">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300%7CRoboto+Slab:400,300,100">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" integrity="sha256-iK7AZM7Xa42iuURdMdo1sp38ld/JJ3fDtS0523GKqdk=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css?1498603570220086400">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.css" integrity="sha256-446p5J21C94lwDJ4yc/oaAO0/0M1NVX5tuHb/ntU2NQ=" crossorigin="anonymous">
+  <link rel="canonical" href="http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/">
+  <link rel="alternate" type="application/rss+xml" title="Technical Blog" href="http://0.0.0.0:4000/feed.xml">
+
+  <script type="text/javascript">
+      var host = "";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/icons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Begin Jekyll SEO tag v2.2.3 -->
+<meta property="og:title" content="SMA: GIT Version Control Integration">
+<meta name="author" content="D">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Git Version control with AzureAutomation">
+<meta property="og:description" content="Git Version control with AzureAutomation">
+<link rel="canonical" href="http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/">
+<meta property="og:url" content="http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/">
+<meta property="og:site_name" content="Technical Blog">
+<meta property="og:image" content="http://0.0.0.0:4000/AzureAutomationCI_banner.jpg">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-09-01T10:30:00+00:00">
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"SMA: GIT Version Control Integration","author":{"@type":"Person","name":"D"},"image":"http://0.0.0.0:4000/AzureAutomationCI_banner.jpg","datePublished":"2016-09-01T10:30:00+00:00","dateModified":"2016-09-01T10:30:00+00:00","description":"Git Version control with AzureAutomation","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/"},"url":"http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+<body>
+  
+<script>
+  dataLayer = [{
+    'pageTitle': 'Building a better blog; an experiment in UI and UX'
+  }];
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K2WMR9L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K2WMR9L');</script>
+<!-- End Google Tag Manager -->
+
+  <div class="ui sidebar very wide vertical">
+
+  <div class="close ui right floated">
+    ×
+  </div>
+
+  <div class="logo">
+    <a href="http://0.0.0.0:4000">
+      <img src="/images/logos/sitelogo.svg" alt="Making Incrediable Technology, Increadibly Simple">
+    </a>
+  </div>
+
+  
+
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-06-25T18:00:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Building a better blog; an experiment in UI and UX" href="/building-a-better-blog/"><h3>Building a better blog; an experiment in UI and UX</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>My initial blog had some nice features, but really didn’t do anything to place my content first. Was it really important that my logo be ...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Jekyll" title="Jekyll">Jekyll</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#UI" title="UI">UI</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#UX" title="UX">UX</a>
+        
+
+        <div class="read-now">
+          <a href="/building-a-better-blog/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-06-23T15:25:51+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Adding Mermaid support to the site" href="/adding-mermaids-back-in-the-game/"><h3>Adding Mermaid support to the site</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>A picture is worth a thousand words, so I assume a diagram is worth a billion words. Expressing our ideas is important and our blog is an...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Jekyll" title="Jekyll">Jekyll</a>
+        
+
+        <div class="read-now">
+          <a href="/adding-mermaids-back-in-the-game/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-01-19T17:42:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Passport To SCOM 2016, Savision Webinar" href="/Webinar-Savision-Passport-To-SCOM-2016/"><h3>Passport To SCOM 2016, Savision Webinar</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Webinar-Savision-Passport-To-SCOM-2016/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-01-11T17:42:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="NL Windows User Group Webinar" href="/Webinar-NLWUG-Azure-Pack-vs-Stack/"><h3>NL Windows User Group Webinar</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Webinar-NLWUG-Azure-Pack-vs-Stack/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-01-08T18:45:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Minnesota Management Summit (MMS) 2017" href="/Conference-MMS-2017-Minesota/"><h3>Minnesota Management Summit (MMS) 2017</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Conference-MMS-2017-Minesota/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-01-08T18:45:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Cloud and Datacenter Conference 2017" href="/Conference-Cloud-And-Datacenter-2017-Duseldorf/"><h3>Cloud and Datacenter Conference 2017</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Conference-Cloud-And-Datacenter-2017-Duseldorf/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-01-08T18:45:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="NIC Conference 2017, OSLO" href="/Conference-NICCONF-2017-Oslo/"><h3>NIC Conference 2017, OSLO</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Conference-NICCONF-2017-Oslo/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-11-22T10:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="OMS Alerts for MS Teams" href="/OMS-and-Teams-Alerts/"><h3>OMS Alerts for MS Teams</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing h...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure%20Automation" title="Azure Automation">Azure Automation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Service%20Management%20Automation" title="Service Management Automation">Service Management Automation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#SMA" title="SMA">SMA</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#GIT" title="GIT">GIT</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Presentation" title="Presentation">Presentation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Continous%20Deployment" title="Continous Deployment">Continous Deployment</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#DevOps" title="DevOps">DevOps</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Open%20Source" title="Open Source">Open Source</a>
+        
+
+        <div class="read-now">
+          <a href="/OMS-and-Teams-Alerts/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-11-01T10:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Experts Live 2017 Europe" href="/Conference-Experts-Live-Europer-2017-Berlin/"><h3>Experts Live 2017 Europe</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Conference-Experts-Live-Europer-2017-Berlin/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-11-01T10:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Experts Live NL 2016" href="/Conference-experts-live-nl-2016/"><h3>Experts Live NL 2016</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+With the greatest honour, I am scheduled to present for the 4th year in succession at the original Experts Live! event which is once aga...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#MVP" title="MVP">MVP</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Webinar" title="Webinar">Webinar</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Live%20Event" title="Live Event">Live Event</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#System%20Center" title="System Center">System Center</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Manager" title="Operations Manager">Operations Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Operations%20Management%20Suite" title="Operations Management Suite">Operations Management Suite</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Virtual%20Machine%20Manager" title="Virtual Machine Manager">Virtual Machine Manager</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202016" title="Windows Server 2016">Windows Server 2016</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Server%202012" title="Windows Server 2012">Windows Server 2012</a>
+        
+
+        <div class="read-now">
+          <a href="/Conference-experts-live-nl-2016/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-10-31T20:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="WMUG Webinar" href="/user-group-webinar/"><h3>WMUG Webinar</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>
+I am delighed to be invited as a guest presenter for the Windows Mangement User Group, for thier November 2016 online Webinar. This dutc...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Service%20Management%20Automation" title="Service Management Automation">Service Management Automation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#SMA" title="SMA">SMA</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Stack" title="Windows Azure Stack">Windows Azure Stack</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Continous%20Deployment" title="Continous Deployment">Continous Deployment</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#DevOps" title="DevOps">DevOps</a>
+        
+
+        <div class="read-now">
+          <a href="/user-group-webinar/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-09-02T10:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="System Center Universe 2016: IoT in the Enterprise" href="/system-center-universe-2016-iot-in-the-enterprise/"><h3>System Center Universe 2016: IoT in the Enterprise</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>IoT in the Enterprise 
+Speaker: Damian Flynn
+
+Abstract
+
+
+Surrounding all the Hype, can the Internet of Things really offer value. How do ...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure%20Automation" title="Azure Automation">Azure Automation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Service%20Management%20Automation" title="Service Management Automation">Service Management Automation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#SMA" title="SMA">SMA</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#GIT" title="GIT">GIT</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Presentation" title="Presentation">Presentation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Continous%20Deployment" title="Continous Deployment">Continous Deployment</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#DevOps" title="DevOps">DevOps</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Open%20Source" title="Open Source">Open Source</a>
+        
+
+        <div class="read-now">
+          <a href="/system-center-universe-2016-iot-in-the-enterprise/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-08-24T07:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Starting in Incubation , Hello Lumagate " href="/Starting-in-Incubation/"><h3>Starting in Incubation , Hello Lumagate </h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>This morning I am proud and delighted to announce that I am now officially part of the amazing energy of the Lumagate team. I will contin...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Achivements" title="Achivements">Achivements</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Career" title="Career">Career</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lumagate" title="Lumagate">Lumagate</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+
+        <div class="read-now">
+          <a href="/Starting-in-Incubation/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-08-08T12:07:15+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Unemployeed after 18 Years" href="/Unemployeed-After-18-Years/"><h3>Unemployeed after 18 Years</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>It’s a Monday morning, and I am sitting on the ferry from Holyhead to Dublin with my wife and daughter, on the way home  from a lovely va...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Achivements" title="Achivements">Achivements</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Career" title="Career">Career</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Lionbridge" title="Lionbridge">Lionbridge</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#ITIL" title="ITIL">ITIL</a>
+        
+
+        <div class="read-now">
+          <a href="/Unemployeed-After-18-Years/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2016-02-04T09:40:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Azure Pack: Get the Token?" href="/azure-pack-adfs-token/"><h3>Azure Pack: Get the Token?</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>This post is primarily for personal reference. It is a clone of the code posted on the (Windows Azure Pack Security Troubleshooting)[http...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#PowerShell" title="PowerShell">PowerShell</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure" title="Azure">Azure</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Active%20Directory" title="Active Directory">Active Directory</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure%20AD" title="Azure AD">Azure AD</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Federation" title="Federation">Federation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+
+        <div class="read-now">
+          <a href="/azure-pack-adfs-token/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2015-12-10T09:40:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="AD: GUIDs in Base64" href="/PowerShell-AD-GUID-Base64/"><h3>AD: GUIDs in Base64</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>Just a short note this time. As I continue to work on multiple federation partners, and configuration endpoints, I continue to see a mix ...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#PowerShell" title="PowerShell">PowerShell</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure" title="Azure">Azure</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Active%20Directory" title="Active Directory">Active Directory</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Azure%20AD" title="Azure AD">Azure AD</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Federation" title="Federation">Federation</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Windows%20Azure%20Pack" title="Windows Azure Pack">Windows Azure Pack</a>
+        
+
+        <div class="read-now">
+          <a href="/PowerShell-AD-GUID-Base64/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2015-12-01T22:40:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Utility: Bing Wallpaper Downloader" href="/PowerShell-Bing-Wallpaper/"><h3>Utility: Bing Wallpaper Downloader</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>One of the more challenging issues with building a big proof of concept environment with lots of different ADFS instances, is to make eac...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#PowerShell" title="PowerShell">PowerShell</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Wallpaper" title="Wallpaper">Wallpaper</a>
+        
+
+        <div class="read-now">
+          <a href="/PowerShell-Bing-Wallpaper/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2015-11-11T20:30:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="GIT: Register a GitHub Account" href="/register-a-github-account/"><h3>GIT: Register a GitHub Account</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>GitHub How to register for an account
+
+DEVOPS is everywhere and as hard as you might try to ignore it, sooner or later you are going to n...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#PowerShell" title="PowerShell">PowerShell</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#OpenSource" title="OpenSource">OpenSource</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Git%20/%20GitHub" title="Git / GitHub">Git / GitHub</a>
+        
+
+        <div class="read-now">
+          <a href="/register-a-github-account/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2015-11-07T21:02:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="GIT: Updating a Forked Repository" href="/updating-a-forked-repo/"><h3>GIT: Updating a Forked Repository</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+          </div>
+        </author>
+        <p>While recently working with a community project which is hosted using GIT, due to high frequency of activity in the main repository, I qu...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Community" title="Community">Community</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#PowerShell" title="PowerShell">PowerShell</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#OpenSource" title="OpenSource">OpenSource</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Git%20/%20GitHub" title="Git / GitHub">Git / GitHub</a>
+        
+
+        <div class="read-now">
+          <a href="/updating-a-forked-repo/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+</div>
+
+
+  <div class="pusher dimmable">
+    
+
+
+
+
+
+<div class="ui vertical masthead segment" style="background: url(AzureAutomationCI_banner.jpg) center center / cover no-repeat">
+  
+
+
+
+</div>
+
+
+
+
+<div class="ui borderless large  fixed menu">
+  <div class="ui text container">
+    <a href="#" class="item" data-tooltip="Read More" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon newspaper o large"></i>
+</a>
+<a href="http://0.0.0.0:4000" class="item" data-tooltip="er, Home ;)" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon home large"></i>
+</a>
+<a href="/under-the-decision-tree/" class="item" data-tooltip="Under the Decision Tree" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon leaf large"></i>
+</a>
+<a href="/about/" class="item" data-tooltip="Who is Damian?" data-inverted="" data-position="bottom center" data-variation="small">
+  
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="638.6 -88.8 242.8 242.8">
+	<documentproperties v:langid="6153" v:viewmarkup="false"></documentproperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#d96666;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#92d050;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:#339933;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {fill:#cc3333;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mid="0" v:index="1" v:groupcontext="foregroundPage">
+		<title>Layer_1</title>
+		<pageproperties v:drawingscale="1" v:pagescale="1" v:drawingunits="19" v:shadowoffsetx="9" v:shadowoffsety="-9"></pageproperties>
+		<g id="shape23-1" v:mid="23" v:groupcontext="shape" transform="translate(203.073,-79.6629)">
+			<title>Sheet.23</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape24-3" v:mid="24" v:groupcontext="shape" transform="translate(203.073,-55.349)">
+			<title>Sheet.24</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape25-5" v:mid="25" v:groupcontext="shape" transform="translate(203.073,-29.6844)">
+			<title>Sheet.25</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape26-7" v:mid="26" v:groupcontext="shape" transform="translate(203.073,-5.83216)">
+			<title>Sheet.26</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape27-9" v:mid="27" v:groupcontext="shape" transform="translate(-4.21401,192.798) rotate(-90)">
+			<title>Sheet.27</title>
+			<path d="M0 198 L129.17 198 L136.61 184.51 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape28-11" v:mid="28" v:groupcontext="shape" transform="translate(-27.0082,192.798) rotate(-90)">
+			<title>Sheet.28</title>
+			<path d="M0 198 L141.76 197.98 L149.22 184.44 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape29-13" v:mid="29" v:groupcontext="shape" transform="translate(-49.8548,192.798) rotate(-90)">
+			<title>Sheet.29</title>
+			<path d="M0 198 L154.37 197.9 L161.8 184.45 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape30-15" v:mid="30" v:groupcontext="shape" transform="translate(250.799,192.798) rotate(90) scale(-1,1)">
+			<title>Sheet.30</title>
+			<path d="M0 198 L135.92 198 L169.69 130.46 L0 130.68 L0 198 Z" class="st3"></path>
+		</g>
+		<g id="shape31-17" v:mid="31" v:groupcontext="shape" transform="translate(143.132,-5.83216)">
+			<title>Sheet.31</title>
+			<path d="M0 26.41 A69.2591 65.1218 164.74 0 1 108.91 55.96 A76.8728 70.9071 25.41 1 1 128.32 197.62 L128.32 110.83 A335.662
+						 335.662 0 0 1 149.43 131.94 a42.7783 0.427783 90.43 0 1 1.13687E-13 48.29 A62.2632 55.1179 -163.3 1 0 94.55
+						 78.41 A45.5864 40.6553 -152.1 0 0 18.57 39.07 A538.46 367.132 0 0 1 0 26.41 Z" class="st4"></path>
+		</g>
+		<g id="shape32-19" v:mid="32" v:groupcontext="shape" transform="translate(8.79297E-14,-5.20174)">
+			<title>Sheet.32</title>
+			<path d="M52.8 198 A71.6244 59.9705 150.26 0 1 18.19 100.07 A67.1397 67.1397 0 0 1 5.52 93.32 A642.166 642.166 -180 0
+						 0 47.73 78.12 L45.2 116.95 L32.54 109.36 A39.0048 32.9968 -78.69 0 0 52.8 177.74 L52.8 198 Z" class="st3"></path>
+		</g>
+	</g>
+</svg>
+
+
+</a>
+<a href="/open-source/" class="item" data-tooltip="Open source" data-inverted="" data-position="bottom center" data-variation="small">
+  
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<path id="open-source" fill="#333333" d="M32,0.6C14.4,0.6,0,15,0,32.6C0,45.8,8,57.1,19.4,62c1,0.4,2,0.8,3,1.1l1.1-3.1l5.6-15.7l1.1-3.1
+	c-1.1-0.2-2.1-0.7-3-1.2c-2.4-1.6-4.1-4.3-4.1-7.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9c0,3.3-1.8,6.2-4.5,7.7c-0.9,0.5-2,0.9-3.1,1.1
+	l1,3.1l5.1,15.9l1,3.1c1-0.3,2.1-0.6,3.1-1c11.9-4.6,20.4-16.3,20.4-29.8C64,14.9,49.6,0.6,32,0.6z"></path>
+</svg>
+
+</a>
+<a href="#" class="right floated item">
+  <i class="large horizontally flipped search icon"></i>
+</a>
+
+  </div>
+</div>
+
+<div class="ui borderless large secondary menu">
+  <div class="ui text container">
+    <a href="#" class="item" data-tooltip="Read More" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon newspaper o large"></i>
+</a>
+<a href="http://0.0.0.0:4000" class="item" data-tooltip="er, Home ;)" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon home large"></i>
+</a>
+<a href="/under-the-decision-tree/" class="item" data-tooltip="Under the Decision Tree" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon leaf large"></i>
+</a>
+<a href="/about/" class="item" data-tooltip="Who is Damian?" data-inverted="" data-position="top center" data-variation="small">
+  
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="638.6 -88.8 242.8 242.8">
+	<documentproperties v:langid="6153" v:viewmarkup="false"></documentproperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#d96666;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#92d050;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:#339933;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {fill:#cc3333;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mid="0" v:index="1" v:groupcontext="foregroundPage">
+		<title>Layer_1</title>
+		<pageproperties v:drawingscale="1" v:pagescale="1" v:drawingunits="19" v:shadowoffsetx="9" v:shadowoffsety="-9"></pageproperties>
+		<g id="shape23-1" v:mid="23" v:groupcontext="shape" transform="translate(203.073,-79.6629)">
+			<title>Sheet.23</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape24-3" v:mid="24" v:groupcontext="shape" transform="translate(203.073,-55.349)">
+			<title>Sheet.24</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape25-5" v:mid="25" v:groupcontext="shape" transform="translate(203.073,-29.6844)">
+			<title>Sheet.25</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape26-7" v:mid="26" v:groupcontext="shape" transform="translate(203.073,-5.83216)">
+			<title>Sheet.26</title>
+			<rect x="0" y="184.492" width="58.2519" height="13.5077" class="st1"></rect>
+		</g>
+		<g id="shape27-9" v:mid="27" v:groupcontext="shape" transform="translate(-4.21401,192.798) rotate(-90)">
+			<title>Sheet.27</title>
+			<path d="M0 198 L129.17 198 L136.61 184.51 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape28-11" v:mid="28" v:groupcontext="shape" transform="translate(-27.0082,192.798) rotate(-90)">
+			<title>Sheet.28</title>
+			<path d="M0 198 L141.76 197.98 L149.22 184.44 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape29-13" v:mid="29" v:groupcontext="shape" transform="translate(-49.8548,192.798) rotate(-90)">
+			<title>Sheet.29</title>
+			<path d="M0 198 L154.37 197.9 L161.8 184.45 L0 184.49 L0 198 Z" class="st2"></path>
+		</g>
+		<g id="shape30-15" v:mid="30" v:groupcontext="shape" transform="translate(250.799,192.798) rotate(90) scale(-1,1)">
+			<title>Sheet.30</title>
+			<path d="M0 198 L135.92 198 L169.69 130.46 L0 130.68 L0 198 Z" class="st3"></path>
+		</g>
+		<g id="shape31-17" v:mid="31" v:groupcontext="shape" transform="translate(143.132,-5.83216)">
+			<title>Sheet.31</title>
+			<path d="M0 26.41 A69.2591 65.1218 164.74 0 1 108.91 55.96 A76.8728 70.9071 25.41 1 1 128.32 197.62 L128.32 110.83 A335.662
+						 335.662 0 0 1 149.43 131.94 a42.7783 0.427783 90.43 0 1 1.13687E-13 48.29 A62.2632 55.1179 -163.3 1 0 94.55
+						 78.41 A45.5864 40.6553 -152.1 0 0 18.57 39.07 A538.46 367.132 0 0 1 0 26.41 Z" class="st4"></path>
+		</g>
+		<g id="shape32-19" v:mid="32" v:groupcontext="shape" transform="translate(8.79297E-14,-5.20174)">
+			<title>Sheet.32</title>
+			<path d="M52.8 198 A71.6244 59.9705 150.26 0 1 18.19 100.07 A67.1397 67.1397 0 0 1 5.52 93.32 A642.166 642.166 -180 0
+						 0 47.73 78.12 L45.2 116.95 L32.54 109.36 A39.0048 32.9968 -78.69 0 0 52.8 177.74 L52.8 198 Z" class="st3"></path>
+		</g>
+	</g>
+</svg>
+
+
+</a>
+<a href="/open-source/" class="item" data-tooltip="Open source" data-inverted="" data-position="top center" data-variation="small">
+  
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<path id="open-source" fill="#333333" d="M32,0.6C14.4,0.6,0,15,0,32.6C0,45.8,8,57.1,19.4,62c1,0.4,2,0.8,3,1.1l1.1-3.1l5.6-15.7l1.1-3.1
+	c-1.1-0.2-2.1-0.7-3-1.2c-2.4-1.6-4.1-4.3-4.1-7.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9c0,3.3-1.8,6.2-4.5,7.7c-0.9,0.5-2,0.9-3.1,1.1
+	l1,3.1l5.1,15.9l1,3.1c1-0.3,2.1-0.6,3.1-1c11.9-4.6,20.4-16.3,20.4-29.8C64,14.9,49.6,0.6,32,0.6z"></path>
+</svg>
+
+</a>
+<a href="#" class="right floated item">
+  <i class="large horizontally flipped search icon"></i>
+</a>
+
+  </div>
+</div>
+
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable text container">
+      <article>
+
+        <h1>SMA: GIT Version Control Integration</h1>
+
+        <div class="author">
+          Written by 
+
+
+  
+    
+      <a href="/authors/damian-flynn/">Damian Flynn</a>
+    
+  
+
+
+
+          <div class="time-to-read">
+            
+
+            <i class="icon book"></i> 25
+
+          </div>
+<!-- /.time-to-read -->
+        </div>
+<!-- /.author -->
+
+        <div class="freshness" data-freshness-datetime="2016-09-01T10:30:00+00:00">
+          <i class="icon heartbeat freshness-icon-js"></i>
+          <em>This post is <span class="freshness-days-old-js"></span> days old.</em>
+        </div>
+
+        <p>At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a series of blog posts on the ‘Building Clouds’ blog detailing how to implement a continous deployment version control solution for SMA leveraging a TFS Repository.</p>
+
+<!--excerpt.start-->
+<p>A lot of the work we have been implementing with Service Management Automation (SMA) has been version protected using GIT, as it offers a much lighter experience. In this post I am going to introduce you to Ryan’s latest integration work, which is an evolution of the original efforts leveraging GIT and Azure Automation. We have many steps to cover<!--excerpt.end-->, so lets get started.</p>
+
+<h1 id="git-repository">GIT Repository</h1>
+
+<p>The first step is to ensure you have  <a href="../2015-11-11-register-a-github-account.md">registered an account on GitHub</a>.</p>
+
+<p>We are not going to start from point zero, as that would be simply re-inventing the wheel; instead we are going to make a copy of the great work which Ryan has been working on, an use this as a starting point.</p>
+
+<p>We have two options to choose from in order to get started, which are</p>
+<ol>
+  <li>Forking the Repository</li>
+  <li>Cloning the Repository, to be used as a base for creating a new repository</li>
+</ol>
+
+<p>I will cover both approaches, the Forking option is preferred as it leads to more comunity focus, and allows up to share back any fixes we might add to the solution. However sometimes this is not the focus and the Clone approach may work better.</p>
+
+<h2 id="forking-scorchdev">Forking ScorchDev</h2>
+
+<p>The work we are going to leverage is already published by Ryan in his public GitHub repository which is hosted as <a href="https://github.com/randorfer/ScorchDev">RAndorfer/ScorchDev</a>, or you can also fork from my personal copy as <a href="https://github.com/DamianFlynn/ScorchDev_MMS2016">DamianFlynn/ScorchDev_MMS2016</a></p>
+
+<p>We will use one of GitHub’s features know as ‘Forking’ while will crate a copy of the repository in our account. We will take this approach as we will not have write access to Ryan’s copy of the repository, and we are going to need to customise the configurations stored in the repository for our environment. If we encounter bugs in the solution, we will also be able to resolve these, and then create a ‘Pull’ request to have Ryan check the suggested fixes and decide if these should be pulled into the main code.</p>
+
+<p>To Fork the repository, we will follow these steps:</p>
+<ol>
+  <li>Navigate to GitHub.com and Sign In with your account to the service.</li>
+  <li>Next, we will navigate to Ryans repository which is located at <a href="https://github.com/randorfer/ScorchDev">RAndorfer/ScorchDev</a> or my copy hosted at <a href="https://github.com/DamianFlynn/ScorchDev_MMS2016">DamianFlynn/ScorchDev_MMS2016</a>.</li>
+  <li>With the repository now presented, we will click on the button (currently in the upper left of the screen) labeled as <strong>Fork</strong>
+</li>
+  <li>GitHub will take you back to your account, where you will now have a copy of the project, and an indicator that this is a fork from the upstream repository.</li>
+</ol>
+
+<h3 id="cloning-scorchdev-to-our-development-station">Cloning ScorchDev to our Development Station</h3>
+
+<p>Now that we have our copy of the ScorchDev repository hosted in our GitHub account, we will need to clone a copy of this locally so we can correctly setup our development workstation.</p>
+
+<blockquote>
+  <p>Note: Before you proceed you will need to have a copy of Git for Windows installed on your workstation!</p>
+</blockquote>
+
+<ol>
+  <li>Create or Navigate to a working folder which we will use as the base for where we are going to clone our repositories to, for example I will use <code class="highlighter-rouge">C:\git</code> on my system</li>
+  <li>Now, we will clone a copy of the repository and any submodules which it may contain to our workstation using the following command <code class="highlighter-rouge">git clone --recursive https://github.com/damianflynn/ScorchDev</code>. Of course you will replace my account name ‘damianflynn’ with your account right!</li>
+</ol>
+
+<p>After a few minutes, we should have a copy of the repository on our machine.</p>
+
+<h2 id="clone-and-rebase">Clone and Rebase</h2>
+
+<p>The alternative approach to forking, is to create a local clone of the repository, and then from there delete the existing <code class="highlighter-rouge">.git</code> file, and initialize a new version of the repository as your new base.</p>
+
+<blockquote>
+  <p>Note: Before you proceed you will need to have a copy of Git for Windows installed on your workstation!</p>
+</blockquote>
+
+<h3 id="cloning-the-repository-locally">Cloning the repository locally</h3>
+
+<ol>
+  <li>Create or Navigate to a working folder which we will use as the base for where we are going to clone our repositories to, for example I will use <code class="highlighter-rouge">C:\git</code> on my system</li>
+  <li>Now, we will clone a copy of the repository and any submodules which it may contain to our workstation using the following command <code class="highlighter-rouge">git clone --recursive https://github.com/damianflynn/ScorchDev_MMS2016 ScorchDev</code>.</li>
+</ol>
+
+<p>After a few minutes, we should have a copy of the repository on our machine.</p>
+
+<h3 id="removing-the-git-artifacts">Removing the GIT artifacts</h3>
+
+<p>With the repository now local, we will proceed to remove all the Git related artifacts from this copy. This will erase all the history and the relationship which this copy has with the hosted version we just cloned from (commonly refered to as the upstream master)</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd </span>c:<span class="se">\g</span>it<span class="se">\S</span>corchDev
+<span class="nb">del</span> -Recurse -Force .<span class="se">\g</span>it<span class="se">\</span>
+</code></pre>
+</div>
+
+<h3 id="initialize-a-new-instance">Initialize a new Instance</h3>
+
+<p>Next step is to reinitialize the copy, as a new Git repository. Once this is complete, we can also proceed to create a project in our github account, and push the content back up to this project.</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code>git init
+</code></pre>
+</div>
+
+<p>Using the Web Interface, login to your GitHub account and select the option to <strong>Create a new repository</strong>, this will request some simple details from you, including</p>
+<ol>
+  <li>The <em>Repository name</em>, for example ‘ScorchDev’</li>
+  <li>A <em>Description</em>, for example ‘Continous Integation for Azure Automation’</li>
+  <li>Wheather the project should be <em>Public</em> or <em>Private</em>, which is totally up to your requirements</li>
+  <li>If you wish to <em>Initialize with a README</em>, and add a <em>.gitignore</em> and/or <em>license</em> to the repoisitory, in this case none of these are required as they are part of the copy we are about to push up.</li>
+</ol>
+
+<p>Once this is all in place, we simply click the option to <strong>Create Repository</strong>. This will take a few moments, and you should then see some instructions on how to push your content back up.</p>
+
+<p>In our case, the example will look similar to the following</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code>git remote add origin https://github.com/DamianFlynn/ScorchDev.git
+git push -u origin master
+</code></pre>
+</div>
+
+<h1 id="updating-our-powershell-profile">Updating our PowerShell Profile</h1>
+
+<p>With the local copy of the repository now available, we will proceed to update our PowerShell Profile to automatically load the Local Authoring environment support modules which are included in the repoistory. These will save lots of time, as we proceed to create and debug both runbooks and thier associated assets.</p>
+
+<p>Looking around the content of the repoistory, you will find a folder called <code class="highlighter-rouge">Profile</code> which contains a sample of the information which we should add to our live profile.</p>
+
+<p>The sample is really in 2 parts,</p>
+<ol>
+  <li>A hash table defining the workspaces (repositories) we will be working with. At minumum we will have 1 workspace which is our <strong>ScorchDev</strong> repository</li>
+  <li>A Loop to process the details in the hashtable, updating our PowerShell profile with pointers to the modules hosted in each of the workspaces.</li>
+</ol>
+
+<h2 id="the-configuration-hash-table">The configuration hash table</h2>
+
+<p>The mimimum hast table will look similar to the following example, which is an extract from the <code class="highlighter-rouge">profile.ps1</code> file. Here we can see the name of the workspace (or repoistory) which we are defining, along with some details to how the workspace is organised.</p>
+
+<p>First we are calling the Workspace <strong>SCOrchDev</strong>. Within this Workspace we first define where we cloned the repository to under the variable <strong>Workspace</strong>. The remaining Variables, define the folder name within the repository which will be host for our <strong>Runbooks, Modules, Global Settings</strong> and <strong>Local Development</strong> resources.</p>
+
+<pre><code class="language-PowerShell">$Global:AutomationWorkspace = @{
+    'SCOrchDev' = @{
+        'Workspace' = 'C:\GIT\SCOrchDev'
+        'ModulePath' = 'PowerShellModules'
+        'GlobalPath' = 'Globals'
+        'LocalPowerShellModulePath' = 'LocalPowerShellModules'
+        'RunbookPath' = 'Runbooks'
+    }
+}
+</code></pre>
+<p>The remaining content of the sample <code class="highlighter-rouge">profile.ps1</code> file, will process this hast table and update our powershell environment with the relevant paths to publish the contained modules</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="k">Foreach</span><span class="o">(</span><span class="nv">$_AutomationWorkspace</span> <span class="k">in</span> <span class="nv">$Global</span>:AutomationWorkspace.Keys<span class="o">)</span>
+<span class="o">{</span>
+
+    <span class="nv">$PowerShellModulePath</span> <span class="o">=</span> <span class="s2">"</span><span class="k">$(</span><span class="nv">$Global</span>:AutomationWorkspace.<span class="nv">$_AutomationWorkspace</span>.Workspace<span class="k">)</span><span class="se">\$</span><span class="s2">(</span><span class="nv">$Global</span><span class="s2">:AutomationWorkspace.</span><span class="nv">$_AutomationWorkspace</span><span class="s2">.ModulePath)"</span>
+    <span class="nv">$LocalPowerShellModulePath</span> <span class="o">=</span> <span class="s2">"</span><span class="k">$(</span><span class="nv">$Global</span>:AutomationWorkspace.<span class="nv">$_AutomationWorkspace</span>.Workspace<span class="k">)</span><span class="se">\$</span><span class="s2">(</span><span class="nv">$Global</span><span class="s2">:AutomationWorkspace.</span><span class="nv">$_AutomationWorkspace</span><span class="s2">.LocalPowerShellModulePath)"</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="nb">Test-Path</span> -Path <span class="nv">$PowerShellModulePath</span><span class="o">)</span> <span class="o">{</span> <span class="nv">$env</span>:PSModulePath <span class="o">=</span> <span class="s2">"</span><span class="nv">$PowerShellModulePath</span><span class="s2">;</span><span class="nv">$env</span><span class="s2">:PSModulePath"</span> <span class="o">}</span>
+    <span class="k">if</span><span class="o">(</span><span class="nb">Test-Path</span> -Path <span class="nv">$LocalPowerShellModulePath</span><span class="o">)</span> <span class="o">{</span> <span class="nv">$env</span>:PSModulePath <span class="o">=</span> <span class="s2">"</span><span class="nv">$LocalPowerShellModulePath</span><span class="s2">;</span><span class="nv">$env</span><span class="s2">:PSModulePath"</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nv">$env</span>:LocalAuthoring <span class="o">=</span> <span class="nv">$true</span>
+<span class="nv">$Global</span>:AutomationDefaultWorkspace <span class="o">=</span> <span class="s1">'SCOrchDev'</span>
+
+<span class="c1"># Set up debugging</span>
+<span class="nv">$VerbosePreference</span> <span class="o">=</span> <span class="s1">'Continue'</span>
+<span class="nv">$DebugPreference</span> <span class="o">=</span> <span class="s1">'Continue'</span>
+</code></pre>
+</div>
+
+<p>Now that we understand what we are about to add to our profile, and why, we can ensure that the hash table is correctly defined for our workstation folders, and implement these changes.</p>
+
+<p>If you are using the recommended PowerShell ISE, then all you should need to do is type in the interactive window <code class="highlighter-rouge">psedit $profile</code> which will open a new pane with your current profile, or a new blank profile if one is not already defined. Here we will add the snippets we just reviewed and edited as appropriate. Once you are finished, save the changes to the profile.</p>
+
+<p>Remember that you will need to shutdown and restart the ISE to have it load up the profile on the next startup cycle.</p>
+
+<p>Before we move on with the work, we will run a quick check to ensure that all the modules are available to us now based on the new profile settings. Back in the interactive window we can query for the list of modules which are now offered to us, which should include a number of modules starting with the name <strong>ScorchDev</strong>. If these are not offered, then most likely you will have a mistake in your hash table paths; which you will need to resolve before we proceed.</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code>get-module -name SCOrchDev<span class="k">*</span> -listavailable
+</code></pre>
+</div>
+<p>The results we are expecting would be similar to the following output</p>
+
+<pre><code class="language-powershell-output">
+    Directory: C:\GIT\SCOrchDev\LocalPowerShellModules
+
+
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Script     1.0.1      SCOrchDev-Scaffold                  New-Scaffold
+
+
+    Directory: C:\GIT\SCOrchDev\PowerShellModules
+
+
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Script     3.0.4      SCOrchDev-AzureAutomationIntegra... {Publish-AzureAutomationRunbookChange, Publish-AzureAutomationPowerShellModule, Publish-AzureAut...
+Script     2.2.1      SCOrchDev-Exception                 {Write-Exception, New-Exception, Convert-ExceptionToString, Get-ExceptionInfo...}
+Script     2.1.0      SCOrchDev-File                      {New-ZipFile, New-TempDirectory, Get-FileEncoding, ConvertTo-UTF8...}
+Script     2.2.5      SCOrchDev-GitIntegration            {New-ChangesetTagLine, Get-GlobalFromFile, Update-RepositoryInformationCommitVersion, Get-GitRep...
+Script     2.1.1      SCOrchDev-PasswordVault             {Get-PasswordVaultCredential, Set-PasswordVaultCredential, Remove-PasswordVaultCredential}
+Script     0.1.1      SCOrchDev-StoredCredential          Get-StoredCredential
+Script     2.1.9      SCOrchDev-Utility                   {Format-ObjectDump, ConvertTo-Boolean, Select-FirstValid, Find-DeclaredCommand...}
+
+</code></pre>
+
+<h1 id="preparing-for-continuous-deployment">Preparing for Continuous Deployment</h1>
+
+<p>With our development system now ready, we can now focus on updating the variables which the <strong>SCOrchDev Continuous Deployment</strong> solution will leverge to deliver its service. There are a number of predefined variables we need to declare, including:</p>
+
+<ul>
+  <li>Azure subscription details and access</li>
+  <li>Automation resource group details</li>
+  <li>Git Repository information to link for the CI.</li>
+</ul>
+
+<h2 id="defining-the-continuous-deployment-configuration-variables">Defining the continuous deployment configuration Variables</h2>
+
+<p>The variables we are going to focus on, are all hosted in a folder of our new solution, called <code class="highlighter-rouge">Globals</code>, within which we will locate a <strong>JSON</strong> formated file, called <code class="highlighter-rouge">zzGlobal.json</code>.</p>
+
+<p>To begin, we will open and edit this file with our favourite code editor, for example I will launch Visual Studio Code as follows</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd </span>ScorchDev<span class="se">\G</span>lobals
+code .<span class="se">\z</span>zGlobal.json
+</code></pre>
+</div>
+
+<p>With the file open, we can begin the process of customisation.</p>
+
+<ol>
+  <li>Our initial variable, <code class="highlighter-rouge">zzGlobal-RunbookWorkerAccessCredentialName</code> is used to identify the credential object which will have local administrative privilages to the on premise resources. In the scenarion where we are dealing with domain resources this will be defined in Universal Principal Name Format (UPN), and for Local accounts we will just use the short account name.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-RunbookWorkerAccessCredentialName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"The credential name for accessing runbook workers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"automation@damianflynn.com"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>The next variable, <code class="highlighter-rouge">zzGlobal-SubscriptionAccessCredentialName</code> identifies the credential object which has privilages to your Azure Subscription; which will be leveraged to provision your Azure Automation services.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-SubscriptionAccessCredentialName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Name of the credential to be used for authenticating to the subscription"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"azureadmin@damianflynn.com"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>Azure Automation is part of the Microsoft Operations Management Suite (OMS), and requires your Log Analythics workspace ID to enable the solution with access to the Hybrid Workers.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-WorkspaceID"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"the workspace ID of the Log Analytics account with the automation solution deployed to it"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"01234567-abcd-efab-0123-0123456789ab"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>As you may have multiple azure Subscriptions, the variable <code class="highlighter-rouge">zzGlobal-SubscriptionName</code> enables us to identify which subscription we will deploy the Azure Automation account to.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-SubscriptionName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"My MVP Subscription"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>Leveraging the variable <code class="highlighter-rouge">zzGlobal-AutomationAccountName</code> we can provide a name for our new Azure Automation account</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-AutomationAccountName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"name of the automation account"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"SCOrchDev"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>Similarly, the variable <code class="highlighter-rouge">zzGlobal-StorageAccountName</code> premits us to define the name of the storage account we will associate with the Automation Account</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-StorageAccountName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Name of a storage account for storing PSModules during import"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"damianscorchdev"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>Workers, connected to the automation account, hosted on premise will be allocated to the hybrid group identifed bu the variable <code class="highlighter-rouge">zzGlobal-HybridWorkerGroup</code>
+</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-HybridWorkerGroup"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"name of the hybrid worker group for starting sync job on"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Hybrid"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>All the resources we have defined for our subscription so far, will be associatated with the resource group identified by the variable <code class="highlighter-rouge">zzGlobal-ResourceGroupName</code>
+</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-ResourceGroupName"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"resource group that the target automation account is stored in"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"SCOrchDev"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>For continous deployment to function, we will use the variable <code class="highlighter-rouge">zzGlobal-GitRepository</code> to identify the GIT reporitories, which will be syncronised to the automation account. Multiple Git repositories can be defined as key value pairs for this variable.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-GitRepository"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"a key value pair of repositories and their respective branches to sync into this automation account"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"{\"https://github.com/damianflynn/SCOrchDev_MMS2016\":\"master\"}"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>The variable <code class="highlighter-rouge">zzGlobal-GitRepositoryCurrentCommit</code> is used to track the latest commit which has been syncronised to the automation account. This varaible will initially have a -1 value, which will instruct the runbooks to get the lastest version, after which the runbooks will update and manage this variable automatically.</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-GitRepositoryCurrentCommit"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"a key value pair of repositories and their current commit. -1 for initial"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"{\"SCOrchDev_MMS2016\":\"-1\"}"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<ol>
+  <li>Finally, we will define the <code class="highlighter-rouge">zzGlobal-LocalGitRepositoryRoot</code> variable to identify the local path as to where the</li>
+</ol>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="s2">"zzGlobal-LocalGitRepositoryRoot"</span><span class="err">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"isEncrypted"</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"the local path to map the git repositories to"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"c:\\git"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Once all the varibales have been defined to match our subscription details, we will save the file edits and commit them to our copy of the repository, with a comment</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd</span> <span class="se">\g</span>it<span class="se">\S</span>corchDev
+git add -A :/
+git commit -m <span class="s2">"Updated the Configuration Variables to match the subscriptions"</span>
+</code></pre>
+</div>
+
+<h2 id="credentials">Credentials</h2>
+
+<p>Our next step is to create some credential objects to host the account details which will be used within the solution. There are a total of three which we will define.</p>
+
+<p>We will store these in two locations, Initially in the local Windows Password Valut, and also as atrifacts in the Azure Automation account.</p>
+
+<ul>
+  <li>RunbookWorkerAccessCredentialName</li>
+  <li>SubscriptionAccessCredentialName</li>
+  <li>OMS Subscription and Primary Key</li>
+</ul>
+
+<h3 id="windows-password-vault">Windows Password Vault</h3>
+
+<p>To define and store the credentials in the local password vault, we simply create a credental object, and place the details in the object; then we store that object in the local password vault with a helper function called <code class="highlighter-rouge">Set-PasswordVaultCredential</code> as follows</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nv">$cred</span> <span class="o">=</span> <span class="nb">get-credential
+Set</span>-PasswordVaultCredential <span class="nv">$cred</span>
+</code></pre>
+</div>
+
+<p>The first two we will set, are pretty standard, providing the shortname, or UPN for both the <strong>RunbookWorkerAccessCredentialName</strong> and <strong>SubscriptionAccessCredentialName</strong>.</p>
+
+<p>The third and finaly one we will save is the Log Analythics Subscription ID and its private key. In this case the username will be <em>Subscription ID</em>, and the password should be the <em>Private Key</em> as we provide the credentials.</p>
+
+<p>Once all of the credentials have being defined, and stored, we can check the vault to ensure that everything is working as expected by using the helper command <code class="highlighter-rouge">Get-PasswordVaultCredential</code></p>
+
+<h1 id="deploy">Deploy</h1>
+
+<p>At this point we have now completed all the required configuration work in the solution, and can proceed with deploying the framework.</p>
+
+<p>This will acomplish quite a lot for us, including</p>
+
+<ul>
+  <li>Building out the Azure Automation account</li>
+  <li>Creating a Azure Storage blob to host the PS Modules we may use</li>
+  <li>And deploying a runbook which will monitor our Git Repository</li>
+</ul>
+
+<p>To start the process, we will call our deployment script as follows:</p>
+
+<blockquote>
+  <p>Note: It is <strong>imperitave</strong> that you Change into the directory, and not launch indirectly due to path mappings</p>
+</blockquote>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd</span> <span class="se">\G</span>it<span class="se">\S</span>corchDev<span class="se">\A</span><span class="nb">RM</span><span class="se">\\</span>automation-sourcecontrol
+./psDeploy.ps1
+</code></pre>
+</div>
+
+<hr>
+<blockquote>
+  <p>Edits and Clippings</p>
+</blockquote>
+
+<h2 id="defining-the-runbook-workers-web-endpoints">Defining the Runbook Workers Web Endpoints</h2>
+
+<p>All of our runbooks will at some point need to communicate with the Automation engine environment which is hosting it, for example just to query or update our global variables. Therefore we need to define what the endpoints for the REST API which the runbooks should communicate with for the hosting environment. These will generally change depending on your environments, for example Staging verus Production.</p>
+
+<blockquote>
+  <p>Note: Its also possible that you might just want to refer to the environment as “https://localhost” but only if you have the web REST APIs also deployed to each of your runbook servers.</p>
+
+  <ul>
+    <li>
+<strong>WebserviceEndpoint</strong> : “https://sma.diginerve.net”</li>
+    <li>
+<strong>WebservicePort</strong> : “9090”</li>
+  </ul>
+</blockquote>
+
+<pre><code class="language-PowerShell">Set-AutomationVariable -Prefix ContinuousDeployment -Name WebserviceEndpoint -Value "https://sma.diginerve.net" -Description "Local SMA Instance URI"
+Set-AutomationVariable -Prefix ContinuousDeployment -Name WebservicePort -Value "9090" -Description "Local SMA Instance Port"
+Get-AutomationVariable -Name ContinuousDeployment-WebserviceEndpoint
+Get-AutomationVariable -Name ContinuousDeployment-WebservicePort
+</code></pre>
+
+<h3 id="defining-the-runbook-workers-credentials">Defining the Runbook Workers Credentials</h3>
+
+<ul>
+  <li>
+<strong>CredentialName</strong> : “WIN-CHTKSP77JVN\Administrator”</li>
+</ul>
+
+<pre><code class="language-PowerShell">Set-AutomationVariable -Prefix ContinuousDeployment -Name CredentialName -Value "WIN-CHTKSP77JVN\\Administrator" -Description "Local SMA Instance URI"
+Get-AutomationVariable -Name ContinuousDeployment-WebserviceEndpoint
+
+$credential = Get-Credential -Message "Credentials for Local Development SMA REST Access" -UserName "WIN-CHTKSP77JVN\Administrator"
+Set-PasswordVaultCredential -Credential $credential -Resource 'LocalDev'
+Get-PasswordVaultCredential
+</code></pre>
+
+<h3 id="defining-the-integration-runbook-montitor-life-time">Defining the Integration Runbook Montitor Life Time</h3>
+
+<p>The solution is built on the concept of Continous deployment, and thus we need some paramaters to define what this really means. Also based on best practices a runbook should never just run for ever, but instead kill it self, and spwan a new instance to keep everything fresh and clean; and make reviewing logs a ton load easier also!</p>
+
+<p>The following Variables are defined to set the life time settings related to the runbooks existance</p>
+
+<ul>
+  <li>
+<strong>MonitorLifeSpan</strong> : 300
+    <ul>
+      <li>The period in Minutes for which this runbook will run, after which it will attempt to commit suicide and kill it self, but will start a new instance before dieing</li>
+    </ul>
+  </li>
+  <li>
+<strong>MonitorCheckpoint</strong> : 5
+    <ul>
+      <li>How often should the runbook execute a checkpoint during it life</li>
+    </ul>
+  </li>
+  <li>
+<strong>MonitorDelayCycle</strong> : 30
+    <ul>
+      <li>The period of time to wait between executions in seconds</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-PowerShell">Set-AutomationVariable -Prefix ContinuousDeployment -Name MonitorLifeSpan -Value 300 -Description "Local SMA Instance URI"
+Set-AutomationVariable -Prefix ContinuousDeployment -Name MonitorCheckpoint -Value 5 -Description "Local SMA Instance Port"
+Set-AutomationVariable -Prefix ContinuousDeployment -Name MonitorDelayCycle -Value 30 -Description "Local SMA Instance Port"
+Get-AutomationVariable -Name ContinuousDeployment-MonitorLifeSpan
+Get-AutomationVariable -Name ContinuousDeployment-MonitorCheckpoint
+Get-AutomationVariable -Name ContinuousDeployment-MonitorDelayCycle
+</code></pre>
+
+<h3 id="defining-deployment-repository-information">Defining Deployment Repository Information</h3>
+
+<p>The last, and probably most important variable we will set, is used to tell the Continous Integration runbook what repoisitories it will be monitoring, the branch of the repository which is applicable to this environment, and where to keep the working copies on the files on the runbook server.</p>
+
+<blockquote>
+  <p>NOTE: The working copy of the repositories are used for GIT to check out the latest version of the code, and once complete, this code is then imported into service management automation.</p>
+</blockquote>
+
+<p>The architecture of the integration runbook, is designed to support multiple repositories. To simplify the configuration, we can use the very flexiable hash table functions in powershell again, to define the required paramaters which the integration workflow leverages.</p>
+
+<p>For each repoisitory, we need to define the following settings</p>
+
+<ul>
+  <li>
+<strong>Path</strong>                   : C:\SMAData\ScorchDev
+    <ul>
+      <li>The Location on the Runbook Worker which should be used as the staging area; The runbook will use this path as the clone location for the GIT Repoistory, and then as the source location to import the resources into SMA</li>
+    </ul>
+  </li>
+  <li>
+<strong>GlobalsFolder</strong>          : Globals
+    <ul>
+      <li>In the Local Development Environment as we define Global Assets, these are stored in a JSON file; this path indicates the name of the folder within the repository which hosts the JSON File.</li>
+    </ul>
+  </li>
+  <li>
+<strong>RunbookFolder</strong>          : Runbooks
+    <ul>
+      <li>In the Local Development Environment as we define Runbooks for the repository, we will keep these organised under one main folder; this path indicates the name of the folder within the repository which hosts the runbooks.</li>
+    </ul>
+  </li>
+  <li>
+<strong>PowerShellModuleFolder</strong> : PowerShellModules
+    <ul>
+      <li>In the Local Development Environment as we define PowerShell Modules for the repository, we will keep these organised under one main folder; this path indicates the name of the folder within the repository which hosts the modules.</li>
+    </ul>
+  </li>
+  <li>
+<strong>RepositoryPath</strong>         : https://github.com/damianflynn/ScorchDev.git
+    <ul>
+      <li>The URI to the Repoistory which is to feed this workspace</li>
+    </ul>
+  </li>
+  <li>
+<strong>Branch</strong>                 : master
+    <ul>
+      <li>The Branch of the repository which is to be deployed for this workspace</li>
+    </ul>
+  </li>
+  <li>
+<strong>CurrentCommit</strong>          : -1
+    <ul>
+      <li>The Current Commit level of the repository which is located on the worker. Initially there is no clone, we will simply set this to ‘-1’ and the runbook will maintain this after the first pull.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The following is an example of just the main continous integration workflow.</p>
+
+<blockquote>
+  <p>NOTE: The RepositoryPath which is defined below is pointing to a public GIT repository hosted on GitHub. You can easily change this to point at any other GIT repoistory, for example one hosted as part of TFS, or an internal Enterprise GIT Server, Just ensure that the Runbook Worker has access to reach the repository.</p>
+</blockquote>
+
+<blockquote>
+  <p>NOTE: In the event the repoistory is Private, you will need to provide credentials to access the repository. In this case we recommend you create a user account with access to the repository which will be used only for the integration pulls. Then encode the username and password as part of the URI, for example ‘https://Username:Password@/damianflynn/ScorchDev.git’</p>
+</blockquote>
+
+<pre><code class="language-PowerShell">$RepositoryInformation = @{
+    'ContinuousDeployment' = @{
+        'Path'                   = 'C:\GIT\ContinuousDeployment'
+        'RepositoryPath'         = 'https://github.com/damianflynn/ScorchDev.git'
+        'RunbookFolder'          = 'Runbooks'
+        'PowerShellModuleFolder' = 'PowerShellModules'
+        'Branch'                 = 'master'
+        'CurrentCommit'          = '-1'
+    }
+}
+</code></pre>
+
+<p>Now, once we have defined this table, to store the details in a Variable, we will simply convert the table to a nice clean JSON string, and save it to our local configuration environment.</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code>ConvertTo-Json -InputObject <span class="nv">$RepositoryInformation</span>
+
+<span class="nb">Set</span>-AutomationVariable -Prefix ContinuousDeployment -Name RepositoryInformation -Value <span class="o">(</span>ConvertTo-Json -InputObject <span class="nv">$RepositoryInformation</span><span class="o">)</span> -Description <span class="s2">"Repository Details for Continuous Deployment"</span>
+
+Get-AutomationVariable -Name ContinuousDeployment-RepositoryInformation
+</code></pre>
+</div>
+
+<h3 id="checking-in-the-updated-configuration">Checking in the updated configuration</h3>
+
+<p>With the configuration complete, we can now add the changes we just completed to the active branch, for now this is just ‘master’ as we have not discussed branches yet. Then commit these changes with a comment, and finally push the changes to our hosted repoisitory.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>git add -A :/
+git commit -m "Updated the Configuration Settings in the Local Development Environment to match the runbook hosts"
+git push
+</code></pre>
+</div>
+
+<h2 id="preparing-our-sma-server-for-continous-deployment">Preparing our SMA Server for Continous deployment</h2>
+
+<p>Now that we have our copy of the ScorchDev repository hosted in our GitHub account, and updated it to represent the runbook environment configuration, we will need to clone a copy of this locally to just one of the runbook workers in this farm so we can deploy the continus integration services.</p>
+
+<blockquote>
+  <p>Note: Before you proceed you will need to have a copy of Git for Windows installed on your workstation!</p>
+</blockquote>
+
+<ol>
+  <li>Create or Navigate to a working folder which we will use as the base for where we are going to clone our repositories to, for example I will use <code class="highlighter-rouge">C:\git</code> on my system</li>
+  <li>Now, we will clone a copy of the repository and any submodules which it may contain to our workstation using the following command <code class="highlighter-rouge">git clone --recursive https://github.com/damianflynn/ScorchDev</code>. Of course you will replace my account name ‘damianflynn’ with your account right!</li>
+</ol>
+
+<p>After a few minutes, we should have a copy of the repository on our machine.</p>
+
+<h3 id="installing-the-modules-and-runbooks-on-the-worker">Installing the Modules and Runbooks on the Worker</h3>
+
+<p>First, lets get the modules added to our PowerShell search path</p>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nv">$ContinousModules</span> <span class="o">=</span> <span class="s2">"C:</span><span class="se">\g</span><span class="s2">it</span><span class="se">\S</span><span class="s2">corchDev</span><span class="se">\P</span><span class="s2">owerShellModules"</span>
+<span class="nv">$env</span>:PSModulePath <span class="o">=</span> <span class="s2">"</span><span class="k">$(</span><span class="nv">$env</span>:PSModulePath<span class="k">)</span><span class="s2">;</span><span class="nv">$ContinousModules</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>Now lets register the installer in our session so we can begin the implemention</p>
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd</span> <span class="se">\g</span>it<span class="se">\S</span>corchDev<span class="se">\I</span>nstaller
+.<span class="se">\D</span>eploy-Integration.ps1
+</code></pre>
+</div>
+
+<h3 id="defining-the-runbook-workers-credentials-1">Defining the Runbook Workers Credentials</h3>
+
+<ul>
+  <li>
+<strong>CredentialName</strong> : “WIN-CHTKSP77JVN\Administrator”</li>
+</ul>
+
+<pre><code class="language-PowerShell">Set-AutomationVariable -Prefix ContinuousDeployment -Name CredentialName -Value "WIN-CHTKSP77JVN\\Administrator" -Description "Local SMA Instance URI"
+Get-AutomationVariable -Name ContinuousDeployment-WebserviceEndpoint
+
+$credential = Get-Credential -Message "Credentials for Local Development SMA REST Access" -UserName "WIN-CHTKSP77JVN\Administrator"
+Set-PasswordVaultCredential -Credential $credential -Resource 'LocalDev'
+Get-PasswordVaultCredential
+</code></pre>
+
+<p>Add the Credential to the SMA Store also</p>
+
+<p>Using the UI, we can add the following credential object</p>
+<ul>
+  <li>
+<strong>Credential Type</strong> : PowerShell Credential</li>
+  <li>
+<strong>Name</strong> : WIN-CHTKSP77JVN\Administrator
+    <ul>
+      <li>Note this Name Must Match the Value in the <em>ContinuousDeployment-CredentialName</em> Variablevvv</li>
+    </ul>
+  </li>
+  <li>
+<strong>Description</strong> : Credentials with access to the Current Runbook Farm REST API</li>
+  <li>
+<strong>User Name</strong> : The Windows Account which has access to the REST API</li>
+  <li>
+<strong>Password</strong> : The associated password for the Windows Account</li>
+</ul>
+
+<h3 id="deploying-the-integation">Deploying the Integation</h3>
+
+<blockquote>
+  <p>Note: This MUST be ran from the Installer folder, as the scripts use relative paths to locate thier resources currently.</p>
+</blockquote>
+
+<div class="language-powershell highlighter-rouge">
+<pre class="highlight"><code>C:<span class="se">\g</span>it<span class="se">\S</span>corchDev<span class="se">\I</span>nstaller&gt;
+Deploy-Integration -currentcommit -1 -repositoryname ContinuousDeployment -Credential <span class="nv">$credental</span>
+</code></pre>
+</div>
+<p>Assuming this completed without any issues, we should now see that there are a number of new variable assets in the SMA environment representing the variables we defined earlier, and also we should see the integration runbook.</p>
+
+<h3 id="starting-the-integration">Starting the Integration</h3>
+
+<p>Now, simply start the Runbook <strong>Monitor-SourceControlChange</strong>, and if you like to montior the progress, then simply watch the job progress. The workflow has verbose output but by default when deployed this logging is turned off, so you may also choose to enable this for the first few days to observe the flow processing.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Remember, that your new disk will not typically be available to the VM if it reboots unless you write that information to your <a href="http://en.wikipedia.org/wiki/Fstab">fstab</a> file. If you want, you can add several more disks and <a href="virtual-machines-linux-configure-raid.md">configure RAID</a>.</p>
+
+<p>To learn more about Linux on Azure, see:</p>
+
+<ul>
+  <li>
+    <p><a href="virtual-machines-linux-opensource.md">Linux and Open-Source Computing on Azure</a></p>
+  </li>
+  <li>
+    <p><a href="../virtual-machines-command-line-tools.md">How to use the Azure Command-Line Interface</a></p>
+  </li>
+  <li>
+    <p><a href="virtual-machines-linux-script-lamp.md">Deploy a LAMP app using the Azure CustomScript Extension for Linux</a></p>
+  </li>
+  <li>
+    <p><a href="virtual-machines-docker-vm-extension.md">The Docker Virtual Machine Extension for Linux on Azure</a></p>
+  </li>
+</ul>
+
+
+        <div class="articles-footer">
+  <time class="ui horizontal divider center aligned">Published Sep 1, 2016 by</time>
+  <div class="ui center aligned grid post-footer">
+    <author itemscope itemtype="http://schema.org/Person">
+  <div class="ui big horizontal divided list">
+    
+    
+    
+    <div class="item">
+      <img class="ui avatar image" itemprop="image" src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=100" alt="Damian Flynn">
+      <div class="content">
+        <div class="header">
+          <a itemprop="name" href="/authors/damian-flynn/">Damian Flynn</a>
+          
+          <div class="social">
+            <i class="icon ellipsis vertical grey-lighter"></i>
+            
+            <a href="https://twitter.com/damian_flynn" title="@damian_flynn"><i class="icon twitter"></i></a>
+            
+            
+            <a href="https://github.com/damianflynn" title="damianflynn"><i class="icon github alternate"></i></a>
+            
+            
+          </div>
+          
+        </div>
+        <div class="description" itemprop="title">Incubation Team, Architect
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</author>
+
+  </div>
+
+  <div class="ui equal width stackable two column grid">
+    <div class="row">
+      <div class="column">
+        <div class="ui horizontal list">
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Azure%20Automation" title="Azure Automation">Azure Automation</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Service%20Management%20Automation" title="Service Management Automation">Service Management Automation</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#SMA" title="SMA">SMA</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#GIT" title="GIT">GIT</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Presentation" title="Presentation">Presentation</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Continous%20Deployment" title="Continous Deployment">Continous Deployment</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#DevOps" title="DevOps">DevOps</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Open%20Source" title="Open Source">Open Source</a>
+  </div>
+  
+</div>
+
+      </div>
+      <div class="column">
+        <div class="ui right floated menu">
+  <a class="icon item" href="">
+    <i class="icon disabled share alternate"></i>
+  </a>
+
+  <a class="icon item" href="https://twitter.com/intent/tweet?text=%22%22%20http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/%20via%20@damian_flynn" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <i class="icon twitter"></i>
+  </a>
+
+  <a class="github popup icon item" href="https://plus.google.com/share?url=http://0.0.0.0:4000/azure-automation-with-git-OBSIDIAN-Copy/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+    <i class="icon  google plus"></i>
+  </a>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+      </article>
+
+      
+
+<div class="ui horizontal divider center aligned">Suggested reading</div>
+
+<div class="articles-related">
+  
+  
+
+  
+
+  <div class="ui three stackable cards">
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/OMS-and-Teams-Alerts/">OMS Alerts for MS Teams</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Azure%20Automation">Azure Automation</a>  <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a>  <a class="ui basic tiny label orange" href="/tags/#SMA">SMA</a>  <a class="ui basic tiny label orange" href="/tags/#GIT">GIT</a>  <a class="ui basic tiny label orange" href="/tags/#Presentation">Presentation</a>  <a class="ui basic tiny label orange" href="/tags/#Continous%20Deployment">Continous Deployment</a>  <a class="ui basic tiny label orange" href="/tags/#DevOps">DevOps</a>  <a class="ui basic tiny label orange" href="/tags/#Open%20Source">Open Source</a> </span>
+          </div>
+          <div class="description">
+            At Tech-Ed 2014, Ryan Andorfer presented a session, and followed up with a se...
+            <div class="read-now">
+              <a href="/OMS-and-Teams-Alerts/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+
+  
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/user-group-webinar/">WMUG Webinar</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a>  <a class="ui basic tiny label orange" href="/tags/#SMA">SMA</a>  <a class="ui basic tiny label orange" href="/tags/#Continous%20Deployment">Continous Deployment</a>  <a class="ui basic tiny label orange" href="/tags/#DevOps">DevOps</a> </span>
+          </div>
+          <div class="description">
+            
+I am delighed to be invited as a guest presenter for the Windows Mangement U...
+            <div class="read-now">
+              <a href="/user-group-webinar/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+
+  
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/system-center-universe-2016-iot-in-the-enterprise/">System Center Universe 2016: IoT in the Enterprise</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Azure%20Automation">Azure Automation</a>  <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a>  <a class="ui basic tiny label orange" href="/tags/#SMA">SMA</a>  <a class="ui basic tiny label orange" href="/tags/#GIT">GIT</a>  <a class="ui basic tiny label orange" href="/tags/#Presentation">Presentation</a>  <a class="ui basic tiny label orange" href="/tags/#Continous%20Deployment">Continous Deployment</a>  <a class="ui basic tiny label orange" href="/tags/#DevOps">DevOps</a>  <a class="ui basic tiny label orange" href="/tags/#Open%20Source">Open Source</a> </span>
+          </div>
+          <div class="description">
+            IoT in the Enterprise 
+Speaker: Damian Flynn
+
+Abstract
+
+
+Surrounding all the ...
+            <div class="read-now">
+              <a href="/system-center-universe-2016-iot-in-the-enterprise/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+
+  
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/exchange-mail-delivery-latency/">Exchange: Mail delivery latency KPI</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a> </span>
+          </div>
+          <div class="description">
+            One of the new KPI’s which I have been asked recently to collect and report o...
+            <div class="read-now">
+              <a href="/exchange-mail-delivery-latency/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+
+  
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/bitlocker-key-automation/">BitLocker: Automation of Recovery Keys</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a> </span>
+          </div>
+          <div class="description">
+            Bitlocker is a protected service in Active Directory, the keys to the encrypt...
+            <div class="read-now">
+              <a href="/bitlocker-key-automation/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+
+  
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+  
+
+    
+    
+
+    
+
+    
+    
+      <div class="ui card related-cards">
+        <div class="content">
+          <div class="card-header">
+            <h4><a href="/techdays-online-uk-2015-2/">TechDays Online UK 2015</a></h4>
+          </div>
+          <div class="meta">
+            <span class="category"> <a class="ui basic tiny label orange" href="/tags/#Service%20Management%20Automation">Service Management Automation</a> </span>
+          </div>
+          <div class="description">
+            Tuesday February 3rd 2015, sees the start of this year’s FREE Online (or in p...
+            <div class="read-now">
+              <a href="/techdays-online-uk-2015-2/">Read now </a>
+              <i class="icon space shuttle"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  
+
+  
+  
+    
+
+  </div>
+<!--  ui 3 cards -->
+</div>
+
+      <div class="ui hidden divider"></div>
+      <div class="disqus">
+  <h2>Comments</h2>
+
+  <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+var disqus_loaded = false;
+
+function load_disqus()
+{
+  disqus_loaded = true;
+  var disqus_shortname = 'damianflynn';
+  var disqus_title = 'SMA%3A+GIT+Version+Control+Integration';
+  var disqus_url = '/azure-automation-with-git-OBSIDIAN-Copy/';
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  var ldr = document.getElementById('disqus_loader');
+};
+window.onscroll = function(e) {
+  if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+    //hit bottom of page
+    if (disqus_loaded==false)
+    load_disqus()
+  }
+};
+</script>
+
+
+  </div>
+</div>
+
+    <footer class="ui vertical segment">
+  <div class="ui stackable text container">
+    <div class="ui horizontal divider">
+      <a href="http://0.0.0.0:4000">
+        <img class="footer" src="/images/logos/sitelogo.svg" alt="Making Incrediable Technology, Increadibly Simple">
+      </a>
+    </div>
+
+    <div class="ui horizontal list social right floated">
+      <div class="item">
+        <a target="_blank" href="https://twitter.com/damian_flynn"><i class="icon large twitter"></i></a>
+      </div>
+      <div class="item">
+        <a target="_blank" href="https://github.com/damianflynn"><i class="icon large github alternate"></i></a>
+      </div>
+      <div class="item">
+        <a href="/feed.xml"><i class="icon large feed"></i></a>
+      </div>
+    </div>
+
+    <p>© <a href="http://damianflynn.azurewebsites.net">2008-17 Damian Flynn.</a> <a target="_blank" href="https://www.google.com/maps/place/Deer+Crest/@54.1205971,-9.240263,17z/data=!3m1!4b1!4m5!3m4!1s0x485938ff01b1f683:0xb699b4b3bca72fa0!8m2!3d54.1205971!4d-9.2380743"><i class="icon marker"></i></a></p>
+
+  </div>
+</footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js" integrity="sha256-HcON65l89nxNl7vaRECVPe/zNDBzhCcJYBE7O+EcruU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js" integrity="sha256-1uR+pqxH5fN/rOZcZTb9c5+bR3OIYEKzu2sI11Dnj9A=" crossorigin="anonymous"></script>
+<script src="/js/main.js?1498603570220086400"></script>
+<script src="/js/jquery.gmap.js?1498603570220086400"></script>
+
+  <div class="ui freshness popup">
+  <div class="content">Stay fresh! The brighter green, the fresher the article!</div>
+  <div class="ui horizontal list">
+    <div class="item">
+      <i class="heartbeat icon large new"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large old"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large stale"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large rubbish"></i>
+    </div>
+  </div>
+</div>
+
+  <div class="ui basic scrolling modal search-modal">
+  <i class="huge grey close icon"></i>
+  <div class="content">
+    <rim-search data-api-url="https://content-search.ritterim.com"></rim-search>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/inline.js"></script>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/vendor.js"></script>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/main.js"></script>
+  </div>
+</div>
+
+
+
+  
+
+</body>
+</html>

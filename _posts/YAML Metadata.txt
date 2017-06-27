@@ -1,0 +1,139 @@
+---
+authors: Damian Flynn
+comments: true
+date: 2010-10-19 22:40:00+00:00
+layout: post
+description: deploying-vmmssp-2-0-to-our-lab
+title: Deploying VMMSSP 2.0 To Our Lab
+categories:
+- Announcements
+- Business Intelligence
+- Cloud Strategy
+- Data Warehouse
+- Database
+- Developer
+- Events
+- Identity & Access Management
+- Internet of Things
+- IT Pro/DevOps
+- Monitoring & Management
+- Messaging Platforms
+- Mobile
+- Networking
+- Smart Home/Buildings
+- Security
+- Storage, Backup & Recovery
+- Supportability
+- Updates
+- Virtual Machines
+- Web
+
+tags:
+- Achivements
+- MVP
+- Cisco Champion
+- Career
+- Book
+- White Paper / Case Study
+- Podcast
+- Conference
+- Webinar
+- Live Event
+
+- Lionbridge
+- Lumagate
+- Community
+
+- PowerShell
+- Desired State
+- RestAPI
+- OpenSource
+- Git / GitHub
+- Javascript
+- C#
+
+- Release Management
+- Continous Deployment
+- Continous Integration
+
+- Azure
+- Resource Manager
+- Web Sites
+- Virtual Machines / IaaS
+- Traffic Manager
+
+- Networking
+- Software Defined Networking
+- Firewalls / Network Security Groups
+- Load Balancers
+- BGP 
+- DNS
+
+- Replication
+
+- Active Directory
+- Azure AD
+- Federation
+- Bitlocker
+- Delegation
+- RBAC
+- Synchronization
+
+- Hyper-V 
+- CSV
+- Storage Spaces
+- Shield VM / Guarded Fabric
+
+- PowerShell Deployment Toolkit
+- Microsoft Deployment Toolkit
+
+- System Center
+- Configuration Manager
+- Endpoint Protection
+- Azure Automation
+- Orchestrator
+- Service Management Automation
+- Operations Manager
+- Operations Management Suite
+- Service Manager
+- Service Provider Framework
+- Virtual Machine Manager
+
+- NoSQL
+- SQL Server
+- MySQL
+- Cassandra
+- PowerBI
+- Dashboards
+- KPI
+
+- Exchange
+- SMTP
+- POP / IMAP
+
+- PKI
+
+- ITIL
+- Self Service
+
+- Cloud
+- Windows Azure Pack
+- Windows Azure Stack
+- OpenStack
+
+- Windows Server 2016
+- Windows Server 2012
+- Windows 10
+- Linux
+- Ubuntu
+- Redhat / CentOS
+
+- Lighting
+- Live TV / PVR
+- Audio Video
+- Security
+- HVAC
+- Presence
+- iRidiumMobile
+- Command and Control
+---

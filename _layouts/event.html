@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{% include post-image.html %}
+{% include masthead.html %}
+{% include menu.html %}
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable text container">
+      <article>
+
+        <h1>{{ page.title }}</h1>
+
+        <ul class="iconlist">
+          <li><i class="icon-calendar3"></i> <strong>Date:</strong> {{ page.eventdate | date: '%B %-d, %Y' }}</li>
+          <li><i class="icon-map-marker2"></i> <strong>Location:</strong> {{ page.location }}</li>
+        </ul>
+
+        <div class="entry-overlay">
+          <div id="event-countdown" class="countdown"></div>
+        </div>
+
+        <a href="#" class="btn btn-danger btn-block btn-lg">Register</a>
+        
+        <div class="col_one_fourth col_last">
+								<h4>Location</h4>
+								<section id="event-location" class="gmap" style="height: 300px;"></section>
+        </div>
+        
+        <div class="author">
+          Written by {% include articles-authors.html %}
+
+          <div class="time-to-read">
+            {% include word-count.html %}
+            <i class="icon book"></i> {{ words | plus: 250 | divided_by: 200 }}
+
+          </div><!-- /.time-to-read -->
+        </div><!-- /.author -->
+
+        <div class="freshness" data-freshness-datetime="{{ page.date | date_to_xmlschema }}">
+          <i class="icon heartbeat freshness-icon-js"></i>
+          <em>This post is <span class="freshness-days-old-js"></span> days old.</em>
+        </div>
+
+        {{ content }}
+
+        {% include articles-footer.html %}
+
+      </article>
+
+      {% include articles-related.html %}
+      <div class="ui hidden divider"></div>
+      {% include disqus.html %}
+
+  </div>
+</div>
