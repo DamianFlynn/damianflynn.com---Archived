@@ -1,0 +1,34 @@
+<author itemscope itemtype="http://schema.org/Person">
+  <div class="ui big horizontal divided list">
+    {% assign authorCount = page.authors | size %}
+    {% if authorCount == 1 %}
+    {{ page.authors | first }}
+    {% else %}
+    {% for author in page.authors %}
+    <div class="item">
+      <img class="ui avatar image" itemprop="image" src="{{ site.Contributors[author].avatar }}&s=100" alt="{{ author }}">
+      <div class="content">
+        <div class="header">
+          <a itemprop="name" href="/authors/{{ author | replace: " ","-" | prepend: base.url | downcase }}/">{{ author }}</a>
+          {% if site.Contributors[author].twitter or site.Contributors[author].github %}
+          <div class="social">
+            <i class="icon ellipsis vertical grey-lighter"></i>
+            {% if site.Contributors[author].twitter %}
+            <a href="https://twitter.com/{{ site.Contributors[author].twitter }}" title="{{ site.Contributors[author].twitter | prepend: "@"}}"><i class="icon twitter"></i></a>
+            {% endif %}
+            {% if site.Contributors[author].github %}
+            <a href="https://github.com/{{ site.Contributors[author].github }}" title="{{ site.Contributors[author].github }}"><i class="icon github alternate"></i></a>
+            {% endif %}
+            {% if site.Contributors[author].title %}
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="description" itemprop="title">{{ site.Contributors[author].title }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</author>

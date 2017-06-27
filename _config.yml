@@ -4,13 +4,16 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://damianflynn.azurewebsites.net
 safe: false
 title: Technical Blog
-default_image: /images/default/damianflynn-surface.jpg
+default_image: /images/default/surface.jpg
+site_copyright: Damian Flynn (2008-2017)
+site_url: https://www.damianflynn.com
+map_url: https://www.google.com/maps/place/Deer+Crest/@54.1205971,-9.240263,17z/data=!3m1!4b1!4m5!3m4!1s0x485938ff01b1f683:0xb699b4b3bca72fa0!8m2!3d54.1205971!4d-9.2380743
 
 # Font Awesome version
 fa_version: 4.6.0
 
 # Build settings
-timezone: America/New_York
+timezone: Europe/Dublin
 permalink: /:title/
 
 kramdown:
@@ -38,4 +41,22 @@ user_icon: /assets/img/logos/damianflynn-icon-white.svg
 email: info@damianflynn.com
 twitter_username: damian_flynn
 github_username:  damianflynn
-disqus_username: damian_flynn
+disqus_username: damianflynn
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
+
+# Url Shortener
+shortener:
+  basepath: /s/        # Path for stored redirects.
+  preserve: false      # Keep previously generated files.
+  salt:     "Damian"   # The optional salt, used when hasing the Unix time.
+
+# RIMdev posting authors
+Contributors:
+  Damian Flynn:
+    avatar: https://avatars2.githubusercontent.com/u/6288143?v=3
+    title: Incubation Team, Architect
+    desc: Focused on Making Incrediable Technology, Increadibly Simple.
+    twitter: damian_flynn
+    github: damianflynn

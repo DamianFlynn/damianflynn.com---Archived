@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="sitecode-Gs3dOwTVjMXiqzEPmmVf8">
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@damian_flynn">
+  <meta name="twitter:image" property="og:image" content=" /images/default/surface.jpg">
+  <meta name="twitter:title" content=" A blog from Damian Flynn, a Microsoft MVP and Cisco Champion ">
+  <meta name="twitter:description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="http://0.0.0.0:4000/">
+  <meta name="og:title" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+  <meta property="og:image" content=" /images/default/surface.jpg">
+  <meta name="og:description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+  <meta property="og:site_name" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+
+  <!-- Social: Google+ / Schema.org  -->
+  <meta itemprop="name" content="Technical Blog">
+  <meta itemprop="description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+  <meta itemprop="image" content=" /images/default/surface.jpg">
+
+  <title>A blog from Damian Flynn, a Microsoft MVP and Cisco Champion</title>
+  <meta name="description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300%7CRoboto+Slab:400,300,100">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" integrity="sha256-iK7AZM7Xa42iuURdMdo1sp38ld/JJ3fDtS0523GKqdk=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css?1498567114561199700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.css" integrity="sha256-446p5J21C94lwDJ4yc/oaAO0/0M1NVX5tuHb/ntU2NQ=" crossorigin="anonymous">
+  <link rel="canonical" href="http://0.0.0.0:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Technical Blog" href="http://0.0.0.0:4000/feed.xml">
+
+  <script type="text/javascript">
+      var host = "";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/icons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Begin Jekyll SEO tag v2.2.3 -->
+<meta property="og:title" content="Technical Blog">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+<meta property="og:description" content="A blog from Damian Flynn, a Microsoft MVP and Cisco Champion">
+<link rel="canonical" href="http://0.0.0.0:4000/">
+<meta property="og:url" content="http://0.0.0.0:4000/">
+<meta property="og:site_name" content="Technical Blog">
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebSite","name":"Technical Blog","headline":"Technical Blog","description":"A blog from Damian Flynn, a Microsoft MVP and Cisco Champion","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+<body>
+  
+<script>
+  dataLayer = [{
+    'pageTitle': 'Building a better blog; an experiment in UI and UX'
+  }];
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K2WMR9L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K2WMR9L');</script>
+<!-- End Google Tag Manager -->
+
+  <div class="ui sidebar very wide vertical">
+
+  <div class="close ui right floated">
+    ×
+  </div>
+
+  <div class="logo">
+    <a href="http://0.0.0.0:4000">
+      <img src="/images/logos/sitelogo.svg" alt="Making Incrediable Technology, Increadibly Simple">
+    </a>
+  </div>
+
+  
+
+  
+    
+    <div class="ui vertical post-articles">
+      <article>
+        <header>
+          <span class="article-age">
+            <div data-freshness-datetime="2017-06-25T18:00:00+00:00">
+              <em><span class="freshness-days-old-js"></span> days ago.</em>
+            </div>
+          </span>
+          <a title="Building a better blog; an experiment in UI and UX" href="/building-a-better-blog/"><h3>Building a better blog; an experiment in UI and UX</h3></a>
+        </header>
+        <author>
+          <div class="ui horizontal list">
+          
+            <div class="item">
+              <div class="ui avatar image">
+                <img src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=32" alt="Damian Flynn">
+              </div>
+              <div class="content">
+                <a href="/authors/damian-flynn/">Damian Flynn</a>
+              </div>
+            </div>
+          
+          </div>
+        </author>
+        <p>My initial blog had some nice features, but really didn’t do anything to place my content first. Was it really important that my logo be ...</p>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#Jekyll" title="Jekyll">Jekyll</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#UI" title="UI">UI</a>
+        
+        <a class="ui basic label orange tiny" href="http://0.0.0.0:4000/tags/#UX" title="UX">UX</a>
+        
+
+        <div class="read-now">
+          <a href="/building-a-better-blog/">Read now </a><i class="icon space shuttle large"></i>
+        </div>
+      </article>
+    </div>
+    
+  
+</div>
+
+
+  <div class="pusher dimmable">
+    
+
+
+
+
+
+
+
+
+<div class="ui vertical masthead segment" style="background: url(/images/default/surface.jpg) center center / cover no-repeat">
+  
+
+
+
+</div>
+
+
+
+
+<div class="ui borderless large  fixed menu">
+  <div class="ui text container">
+    <a href="#" class="item" data-tooltip="Read More" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon newspaper o large"></i>
+</a>
+<a href="http://0.0.0.0:4000" class="item" data-tooltip="er, Home ;)" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon home large"></i>
+</a>
+<a href="/under-the-decision-tree/" class="item" data-tooltip="Under the Decision Tree" data-inverted="" data-position="bottom center" data-variation="small">
+  <i class="icon leaf large"></i>
+</a>
+<a href="/about/" class="item" data-tooltip="Who is Damian?" data-inverted="" data-position="bottom center" data-variation="small">
+  
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="638.6 -88.8 242.8 242.8">
+<path id="rimdev" fill="#333333" d="M881.4,32.6C881.4,99.7,827,154,760,154S638.6,99.6,638.6,32.6S692.9-88.8,760-88.8
+	S881.4-34.4,881.4,32.6z M709.1-29c-12.1-0.1-19.4,4.3-22.1,13.1c-0.6,9-1.3,17.9-2,26.8c-0.9,10.8-5.3,17.5-13.3,20.1v3.3
+	c7.7,2.6,12.1,9.2,13.3,19.8c0.7,8.9,1.4,17.7,2.1,26.6c2.2,9,8.6,13.5,19,13.5h2.7v-2.9c-4.7-0.3-8.4-1.9-11-4.9s-3.9-6.7-3.9-11.1
+	c0-1.8,0.1-4.6,0.3-8.3c0.2-3.7,0.3-6.5,0.3-8.5c0-12.4-4-21-12.1-25.8c8.2-4.8,12.2-13.5,12.2-25.8c0-1.8-0.1-4.6-0.4-8.3
+	c-0.3-3.7-0.4-6.5-0.4-8.5c0-4.4,1.3-8.1,4-11.1s6.4-4.6,11.1-4.9V-29H709.1z M848.2,30.9c-7.7-2.6-12.1-9.2-13.3-19.8
+	c-0.7-8.9-1.4-17.7-2.1-26.6c-2.2-9-8.6-13.5-19-13.5H811v2.9c4.7,0.3,8.4,1.9,11,4.9c2.6,3,3.9,6.7,3.9,11.1c0,1.8-0.1,4.6-0.3,8.3
+	c-0.2,3.7-0.3,6.6-0.3,8.5c0,12.4,4,21,12.1,25.8c-8.2,4.8-12.2,13.5-12.2,25.8c0,1.8,0.1,4.6,0.4,8.3c0.3,3.7,0.4,6.6,0.4,8.5
+	c0,4.4-1.3,8.1-4,11.1c-2.7,3-6.4,4.6-11.1,4.9v3C823,94.2,830.3,89.8,833,81c0.6-9,1.3-17.9,2-26.8c0.9-10.8,5.3-17.5,13.3-20.1
+	L848.2,30.9L848.2,30.9z M725.5,8.7l8.3,2.1c0,0,4-14.3,14-10.6s18-2.8,18-2.8c3,11.5-13,17.4-29.7,29.9c-8.1,6.1-8,29.1-8,29.1
+	h64.3c-0.3-0.4-4.3-8.8-4.5-19.4c-0.2-10.2,8.3-25.7,7.3-48.3c-1-22.5-27.2-28.9-27.2-28.9c5.5-5.4-7.9-15.2-7.9-15.2v16.1
+	c-14.4,1-20.3,9.7-20.3,9.7l1.9,6.3c0,0-18.1,16.1-22.7,19.8c-4.6,3.6,2,13.4,2,13.4L725.5,8.7z M795.1,62.1L795.1,62.1
+	c0-1-0.8-1.8-1.8-1.8h-65.6c-1,0-1.8,0.8-1.8,1.8l0,0c0,1,0.8,1.8,1.8,1.8h65.6C794.3,63.8,795.1,63,795.1,62.1z M799.3,80.3
+	L795.6,69c0-0.6-0.5-1.1-1.1-1.1h-66.9c-0.6,0-1.1,0.5-1.1,1.1l-3.7,11.3c0,0.6,0.5,1.1,1.1,1.1h74.3
+	C798.8,81.4,799.3,80.9,799.3,80.3z M781.7,109.9c0,0-12.2-7.6-12.2-12.7s5.7-10.1,5.7-10.1c0-0.6-0.9-2.2-1.1-2.2H761h-13.1
+	c-0.2,0-1.1,1.6-1.1,2.2c0,0,5.7,4.9,5.7,10.1c0,5.1-12.2,12.7-12.2,12.7c-0.8,1.4,0.4,2.2,0.6,2.2h20h20
+	C781.2,112.1,782.5,111.2,781.7,109.9z"></path>
+</svg>
+
+</a>
+<a href="/open-source/" class="item" data-tooltip="Open source" data-inverted="" data-position="bottom center" data-variation="small">
+  
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<path id="open-source" fill="#333333" d="M32,0.6C14.4,0.6,0,15,0,32.6C0,45.8,8,57.1,19.4,62c1,0.4,2,0.8,3,1.1l1.1-3.1l5.6-15.7l1.1-3.1
+	c-1.1-0.2-2.1-0.7-3-1.2c-2.4-1.6-4.1-4.3-4.1-7.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9c0,3.3-1.8,6.2-4.5,7.7c-0.9,0.5-2,0.9-3.1,1.1
+	l1,3.1l5.1,15.9l1,3.1c1-0.3,2.1-0.6,3.1-1c11.9-4.6,20.4-16.3,20.4-29.8C64,14.9,49.6,0.6,32,0.6z"></path>
+</svg>
+
+</a>
+<a href="#" class="right floated item">
+  <i class="large horizontally flipped search icon"></i>
+</a>
+
+  </div>
+</div>
+
+<div class="ui borderless large secondary menu">
+  <div class="ui text container">
+    <a href="#" class="item" data-tooltip="Read More" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon newspaper o large"></i>
+</a>
+<a href="http://0.0.0.0:4000" class="item" data-tooltip="er, Home ;)" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon home large"></i>
+</a>
+<a href="/under-the-decision-tree/" class="item" data-tooltip="Under the Decision Tree" data-inverted="" data-position="top center" data-variation="small">
+  <i class="icon leaf large"></i>
+</a>
+<a href="/about/" class="item" data-tooltip="Who is Damian?" data-inverted="" data-position="top center" data-variation="small">
+  
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="638.6 -88.8 242.8 242.8">
+<path id="rimdev" fill="#333333" d="M881.4,32.6C881.4,99.7,827,154,760,154S638.6,99.6,638.6,32.6S692.9-88.8,760-88.8
+	S881.4-34.4,881.4,32.6z M709.1-29c-12.1-0.1-19.4,4.3-22.1,13.1c-0.6,9-1.3,17.9-2,26.8c-0.9,10.8-5.3,17.5-13.3,20.1v3.3
+	c7.7,2.6,12.1,9.2,13.3,19.8c0.7,8.9,1.4,17.7,2.1,26.6c2.2,9,8.6,13.5,19,13.5h2.7v-2.9c-4.7-0.3-8.4-1.9-11-4.9s-3.9-6.7-3.9-11.1
+	c0-1.8,0.1-4.6,0.3-8.3c0.2-3.7,0.3-6.5,0.3-8.5c0-12.4-4-21-12.1-25.8c8.2-4.8,12.2-13.5,12.2-25.8c0-1.8-0.1-4.6-0.4-8.3
+	c-0.3-3.7-0.4-6.5-0.4-8.5c0-4.4,1.3-8.1,4-11.1s6.4-4.6,11.1-4.9V-29H709.1z M848.2,30.9c-7.7-2.6-12.1-9.2-13.3-19.8
+	c-0.7-8.9-1.4-17.7-2.1-26.6c-2.2-9-8.6-13.5-19-13.5H811v2.9c4.7,0.3,8.4,1.9,11,4.9c2.6,3,3.9,6.7,3.9,11.1c0,1.8-0.1,4.6-0.3,8.3
+	c-0.2,3.7-0.3,6.6-0.3,8.5c0,12.4,4,21,12.1,25.8c-8.2,4.8-12.2,13.5-12.2,25.8c0,1.8,0.1,4.6,0.4,8.3c0.3,3.7,0.4,6.6,0.4,8.5
+	c0,4.4-1.3,8.1-4,11.1c-2.7,3-6.4,4.6-11.1,4.9v3C823,94.2,830.3,89.8,833,81c0.6-9,1.3-17.9,2-26.8c0.9-10.8,5.3-17.5,13.3-20.1
+	L848.2,30.9L848.2,30.9z M725.5,8.7l8.3,2.1c0,0,4-14.3,14-10.6s18-2.8,18-2.8c3,11.5-13,17.4-29.7,29.9c-8.1,6.1-8,29.1-8,29.1
+	h64.3c-0.3-0.4-4.3-8.8-4.5-19.4c-0.2-10.2,8.3-25.7,7.3-48.3c-1-22.5-27.2-28.9-27.2-28.9c5.5-5.4-7.9-15.2-7.9-15.2v16.1
+	c-14.4,1-20.3,9.7-20.3,9.7l1.9,6.3c0,0-18.1,16.1-22.7,19.8c-4.6,3.6,2,13.4,2,13.4L725.5,8.7z M795.1,62.1L795.1,62.1
+	c0-1-0.8-1.8-1.8-1.8h-65.6c-1,0-1.8,0.8-1.8,1.8l0,0c0,1,0.8,1.8,1.8,1.8h65.6C794.3,63.8,795.1,63,795.1,62.1z M799.3,80.3
+	L795.6,69c0-0.6-0.5-1.1-1.1-1.1h-66.9c-0.6,0-1.1,0.5-1.1,1.1l-3.7,11.3c0,0.6,0.5,1.1,1.1,1.1h74.3
+	C798.8,81.4,799.3,80.9,799.3,80.3z M781.7,109.9c0,0-12.2-7.6-12.2-12.7s5.7-10.1,5.7-10.1c0-0.6-0.9-2.2-1.1-2.2H761h-13.1
+	c-0.2,0-1.1,1.6-1.1,2.2c0,0,5.7,4.9,5.7,10.1c0,5.1-12.2,12.7-12.2,12.7c-0.8,1.4,0.4,2.2,0.6,2.2h20h20
+	C781.2,112.1,782.5,111.2,781.7,109.9z"></path>
+</svg>
+
+</a>
+<a href="/open-source/" class="item" data-tooltip="Open source" data-inverted="" data-position="top center" data-variation="small">
+  
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.5em" height="1.5em" viewbox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<path id="open-source" fill="#333333" d="M32,0.6C14.4,0.6,0,15,0,32.6C0,45.8,8,57.1,19.4,62c1,0.4,2,0.8,3,1.1l1.1-3.1l5.6-15.7l1.1-3.1
+	c-1.1-0.2-2.1-0.7-3-1.2c-2.4-1.6-4.1-4.3-4.1-7.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9c0,3.3-1.8,6.2-4.5,7.7c-0.9,0.5-2,0.9-3.1,1.1
+	l1,3.1l5.1,15.9l1,3.1c1-0.3,2.1-0.6,3.1-1c11.9-4.6,20.4-16.3,20.4-29.8C64,14.9,49.6,0.6,32,0.6z"></path>
+</svg>
+
+</a>
+<a href="#" class="right floated item">
+  <i class="large horizontally flipped search icon"></i>
+</a>
+
+  </div>
+</div>
+
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable text container">
+      <article>
+
+        <h1>Building a better blog; an experiment in UI and UX</h1>
+
+        <div class="author">
+          Written by 
+
+
+  
+    
+      <a href="/authors/damian-flynn/">Damian Flynn</a>
+    
+  
+
+
+
+          <div class="time-to-read">
+            
+
+            <i class="icon book"></i> 2
+
+          </div>
+<!-- /.time-to-read -->
+        </div>
+<!-- /.author -->
+
+        <div class="freshness grey-lighter" data-freshness-datetime="2017-06-25T18:00:00+00:00">
+          <i class="icon heartbeat freshness-icon-js"></i>
+          <em>This post is <span class="freshness-days-old-js"></span> days old.</em>
+        </div>
+
+        
+
+        <p>My initial blog had some nice features, but really didn’t do anything to place my content first. Was it really important that my logo be prominently placed? Not really, I am recoding both technical, and product related tips, tricks and news, and not focusing on how to keep a Wordpress site secure, and more importantly working reliably, So I have chosen to leverage static site technology, and ensure the layout focuses on what is truly important, the content.</p>
+
+<h2 id="the-article-should-have-your-sole-attention">The article should have your sole attention</h2>
+
+<p><img src="/images/posts/2017-06-25/old-blog-screenshot.png" alt="the new content-focused blog" class="img-fluid border"></p>
+
+<p>The hamburger menu - gone. If you’re visiting on mobile, chances are you got here from a link, which means you’re interested in the article. As you move down the article, it’s just content.</p>
+
+<p>Some of the other standards have worked their way in - how long will it take to read, and how fresh is the content?</p>
+
+<p>If you’re visiting on a tablet or larger, you start to see another layer of content/navigation. The 10 most recent article appear as a sidebar. We still want your attention on the article, so content other than a headline is blurred until you hover.</p>
+
+<h2 id="how-do-i-move-around">How do I move around?</h2>
+
+<p>Once you reach the end of the article, you’re presented with related articles (if we can find any based on tags), else you’re given the previous and next articles for additional reading. You can also explore  content by tags, author, or click the binoculars to bring all articles into focus.</p>
+
+<p>Curious about who we are? As you move back up the article, a footer with light navigation appears. We just keep it out of your way while you’re reading.</p>
+
+<h2 id="whats-next">What’s next?</h2>
+
+<p>I am planning other features, including posting events; and looking for feedback? What do you think?</p>
+
+
+        <div class="articles-footer">
+  <time class="ui horizontal divider center aligned">Published Jun 25, 2017 by</time>
+  <div class="ui center aligned grid post-footer">
+    <author itemscope itemtype="http://schema.org/Person">
+  <div class="ui big horizontal divided list">
+    
+    
+    
+    <div class="item">
+      <img class="ui avatar image" itemprop="image" src="https://avatars2.githubusercontent.com/u/6288143?v=3&amp;s=100" alt="Damian Flynn">
+      <div class="content">
+        <div class="header">
+          <a itemprop="name" href="/authors/damian-flynn/">Damian Flynn</a>
+          
+          <div class="social">
+            <i class="icon ellipsis vertical grey-lighter"></i>
+            
+            <a href="https://twitter.com/damian_flynn" title="@damian_flynn"><i class="icon twitter"></i></a>
+            
+            
+            <a href="https://github.com/damianflynn" title="damianflynn"><i class="icon github alternate"></i></a>
+            
+            
+          </div>
+          
+        </div>
+        <div class="description" itemprop="title">Incubation Team, Architect
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</author>
+
+  </div>
+
+  <div class="ui equal width stackable two column grid">
+    <div class="row">
+      <div class="column">
+        <div class="ui horizontal list">
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#Jekyll" title="Jekyll">Jekyll</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#UI" title="UI">UI</a>
+  </div>
+  
+  <div class="item">
+    <a class="ui basic label orange large" href="http://0.0.0.0:4000/tags/#UX" title="UX">UX</a>
+  </div>
+  
+</div>
+
+      </div>
+      <div class="column">
+        <div class="ui right floated menu">
+  <a class="icon item" href="">
+    <i class="icon disabled share alternate"></i>
+  </a>
+
+  <a class="icon item" href="https://twitter.com/intent/tweet?text=%22Building+a+better+blog%3B+an+experiment+in+UI+and+UX%22%20http://0.0.0.0:4000/building-a-better-blog/%20via%20@damian_flynn" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <i class="icon twitter"></i>
+  </a>
+
+  <a class="github popup icon item" href="https://plus.google.com/share?url=http://0.0.0.0:4000/building-a-better-blog/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+    <i class="icon  google plus"></i>
+  </a>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+      </article>
+
+      
+
+<div class="ui horizontal divider center aligned">Suggested reading</div>
+
+<div class="articles-related">
+  
+  
+
+  
+
+  <div class="ui three stackable cards">
+  
+
+    
+    
+
+    
+
+    
+  
+
+  </div>
+<!--  ui 3 cards -->
+</div>
+
+      <div class="ui hidden divider"></div>
+      <div class="disqus">
+  <h2>Comments</h2>
+
+  <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+var disqus_loaded = false;
+
+function load_disqus()
+{
+  disqus_loaded = true;
+  var disqus_shortname = 'damianflynn';
+  var disqus_title = 'Building+a+better+blog%3B+an+experiment+in+UI+and+UX';
+  var disqus_url = '/building-a-better-blog/';
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  var ldr = document.getElementById('disqus_loader');
+};
+window.onscroll = function(e) {
+  if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+    //hit bottom of page
+    if (disqus_loaded==false)
+    load_disqus()
+  }
+};
+</script>
+
+
+  </div>
+</div>
+
+
+    <footer class="ui vertical segment">
+  <div class="ui stackable text container">
+    <div class="ui horizontal divider">
+      <a href="http://0.0.0.0:4000">
+        <img class="footer" src="/images/logos/sitelogo.svg" alt="Making Incrediable Technology, Increadibly Simple">
+      </a>
+    </div>
+
+    <div class="ui horizontal list social right floated">
+      <div class="item">
+        <a target="_blank" href="https://twitter.com/damian_flynn"><i class="icon large twitter"></i></a>
+      </div>
+      <div class="item">
+        <a target="_blank" href="https://github.com/damianflynn"><i class="icon large github alternate"></i></a>
+      </div>
+      <div class="item">
+        <a href="/feed.xml"><i class="icon large feed"></i></a>
+      </div>
+    </div>
+
+    <p>© <a href="https://www.damianflynn.com">Damian Flynn (2008-2017)</a> <a target="_blank" href="https://www.google.com/maps/place/Deer+Crest/@54.1205971,-9.240263,17z/data=!3m1!4b1!4m5!3m4!1s0x485938ff01b1f683:0xb699b4b3bca72fa0!8m2!3d54.1205971!4d-9.2380743"><i class="icon marker"></i></a></p>
+
+  </div>
+</footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js" integrity="sha256-HcON65l89nxNl7vaRECVPe/zNDBzhCcJYBE7O+EcruU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js" integrity="sha256-1uR+pqxH5fN/rOZcZTb9c5+bR3OIYEKzu2sI11Dnj9A=" crossorigin="anonymous"></script>
+<script src="/js/main.js?1498567114561199700"></script>
+
+  <div class="ui freshness popup">
+  <div class="content">Stay fresh! The brighter green, the fresher the article!</div>
+  <div class="ui horizontal list">
+    <div class="item">
+      <i class="heartbeat icon large new"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large old"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large stale"></i>
+    </div>
+    <div class="item">
+      <i class="heartbeat icon large rubbish"></i>
+    </div>
+  </div>
+</div>
+
+  <div class="ui basic scrolling modal search-modal">
+  <i class="huge grey close icon"></i>
+  <div class="content">
+    <rim-search data-api-url="https://content-search.ritterim.com"></rim-search>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/inline.js"></script>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/vendor.js"></script>
+    <script src="https://rim-cdn-assets.azurewebsites.net/rim-search/latest/semanticui2/main.js"></script>
+  </div>
+</div>
+
+
+
+  
+
+</body>
+</html>

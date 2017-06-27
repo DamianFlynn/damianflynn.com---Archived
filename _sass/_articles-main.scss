@@ -1,0 +1,72 @@
+// post main column (right)
+.pusher {
+  .masthead {
+    height: 30vh;
+    overflow: hidden;
+    position: relative;
+    .container.above {
+      position: absolute;
+      z-index: 10;
+      left: 1em;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      top: -50vh;
+      left: 0;
+    }
+  }
+  article,
+  .disqus,
+  .tags,
+  .articles-related,
+  .authors-page {
+    // nested articles on authors page
+    font-family: $font-body;
+    font-weight: 300;
+    article {
+      padding: 0;
+    }
+    p {
+      max-width: 100%;
+      overflow-y: hidden;
+      img {
+        display: block;
+        margin: 2em auto;
+        text-align: center;
+        max-height: 100%;
+      }
+    }
+    h1 {
+      color: $color-blue-bright;
+      margin-top: 1em;
+    }
+    h2, h3, h4, h5, h6 {
+      color: $color-blue-bright;
+      font-weight: 300;
+    }
+    h1 {
+      border-bottom: 1px solid $grey-lighter;
+      padding-bottom: .5em;
+      margin-bottom: .18em;
+      @media print {font-size: 2em;}
+    }
+    .author {
+      border-bottom: 1px solid $grey-lighter;
+      margin-bottom: 1em;
+      padding-bottom: .5em;
+      a {
+        text-decoration: none;
+        &:nth-child(2) {
+          margin-left: 0.5em;
+        }
+      }
+    }
+    .caption {
+      display: block;
+      margin-top: -1em;
+      color: $grey;
+      font-size: 90%;
+    }
+  }
+}
