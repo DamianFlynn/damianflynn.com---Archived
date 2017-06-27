@@ -2,14 +2,14 @@
 layout: page
 title: So who is Damian Flynn anyway?
 permalink: /about/
-image: /images/default/rimdev-configyml.jpg
+image: /images/default/keyboard.jpg
 ---
 
 ## We're Ritter Insurance Marketing's software development department
 
 [Ritter Insurance Marketing](https://ritterim.com) (RIM) is a Field Marketing Organization (FMO) in the Senior Life and Health Insurance markets. That means we promote and distribute insurance carriers’ products to licensed agents.
 
-![Ritter Insurance Marketing's software DEVelopment department ](/images/logos/RIMdev.svg){: .ui.fluid.image}
+![www.DamianFlynn.com ](/images/logos/sitelogo.svg){: .ui.fluid.image}
 
 RIMdev (catchy, huh?!) develops the tools to facilitate the success of these agents, helping them succeed and better support their clients.
 

@@ -6,7 +6,7 @@ safe: false
 title: Technical Blog
 default_image: /images/default/surface.jpg
 site_copyright: Damian Flynn (2008-2017)
-site_url: https://www.damianflynn.com
+site_url: http://damianflynn.azurewebsites.net
 map_url: https://www.google.com/maps/place/Deer+Crest/@54.1205971,-9.240263,17z/data=!3m1!4b1!4m5!3m4!1s0x485938ff01b1f683:0xb699b4b3bca72fa0!8m2!3d54.1205971!4d-9.2380743
 
 # Font Awesome version
