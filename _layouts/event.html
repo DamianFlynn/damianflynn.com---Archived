@@ -11,22 +11,26 @@ layout: default
 
         <h1>{{ page.title }}</h1>
 
-        <ul class="iconlist">
-          <li><i class="icon-calendar3"></i> <strong>Date:</strong> {{ page.eventdate | date: '%B %-d, %Y' }}</li>
-          <li><i class="icon-map-marker2"></i> <strong>Location:</strong> {{ page.location }}</li>
-        </ul>
+        <div class="ui two column stackable grid">
+          <div class="center aligned row">
 
-        <div class="entry-overlay">
-          <div id="event-countdown" class="countdown"></div>
+            <div id="event-location" class="black column oss starorgs">
+              
+            </div>
+
+            <div class="teal column oss supurlative">
+              <h3>{{ page.eventdate | date: '%B' }} <span>{{ page.eventdate | date: '%-d,' }} </span>{{ page.eventdate | date: '%Y' }}</h3>
+              <p>{{ page.location }}</p>
+              <div id="event-countdown" class="countdown"></div>
+              <a class="ui animated big yellow button" target="_blank" href="https://github.com/ritterim/supurlative">
+                <div class="hidden content">Here <i class="icon github"></i></div>
+                <div class="visible content">Register</div>
+              </a>
+
+            </div>
+          </div>
         </div>
 
-        <a href="#" class="btn btn-danger btn-block btn-lg">Register</a>
-        
-        <div class="col_one_fourth col_last">
-								<h4>Location</h4>
-								<section id="event-location" class="gmap" style="height: 300px;"></section>
-        </div>
-        
         <div class="author">
           Written by {% include articles-authors.html %}
 

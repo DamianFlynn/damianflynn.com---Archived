@@ -2,4 +2,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js" integrity="sha256-HcON65l89nxNl7vaRECVPe/zNDBzhCcJYBE7O+EcruU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js" integrity="sha256-1uR+pqxH5fN/rOZcZTb9c5+bR3OIYEKzu2sI11Dnj9A=" crossorigin="anonymous"></script>
 <script src="{{ "/js/main.js" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}"></script>
-<script src="{{ "/js/jquery.gmap.js" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}"></script>
+<script src="{{ "/js/search.js" | prepend: site.baseurl }}"></script>
+
+{% if page.layout == 'event' %}
+<!-- Event Posts Client Side Javascript -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{{ "/js/jquery.countdown.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/jquery.gMap.js" | prepend: site.baseurl }}"></script>
+
+<script>
+
+
+	var eventStarts = new Date( {{ page.eventdate | date: '%Y' }} , {{ page.eventdate | date: '%-m' }} , {{ page.eventdate | date: '%-d' }} );
+	$('#event-countdown').countdown({until: eventStarts})
+	.on('update.countdown', function(event) {
+  		var format = '%H:%M:%S';
+  		if(event.offset.totalDays > 0) {
+    		format = '%-d day%!d ' + format;
+  		}
+  		if(event.offset.weeks > 0) {
+    		format = '%-w week%!w ' + format;
+  		}
+  		$(this).html(event.strftime(format));
+	})
+	.on('finish.countdown', function(event) {
+  		$(this).html('This offer has expired!')
+		.parent().addClass('disabled');
+	});
+
+</script>
+
+<script type="text/javascript">
+	$('#event-location').gMap({
+		 address: '{{ page.location }}',
+		 maptype: 'ROADMAP',
+		 zoom: 14,
+		 markers: [
+			{
+				address: "{{ page.location }}"
+			}
+		 ],
+		 doubleclickzoom: false,
+		 controls: {
+			 panControl: true,
+			 zoomControl: true,
+			 mapTypeControl: true,
+			 scaleControl: false,
+			 streetViewControl: false,
+			 overviewMapControl: false
+		 }
+
+	});
+</script>
+{% endif %}

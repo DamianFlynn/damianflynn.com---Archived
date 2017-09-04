@@ -5,8 +5,8 @@ layout: event
 description: Minnesota Management Summit (MMS) 2017
 title: "Minnesota Management Summit (MMS) 2017"
 event: MMS 2017
-location: Dusseldorf, Germand
-eventdate: 2017-05-19
+location: Radisson Blu Mall of America, Killebrew Drive, Bloomington, MN, United States
+eventdate: 2017-07-19
 image: /images/events/MMS2017/banner.jpg
 date: 2017-01-08 18:45:00
 categories:

@@ -9,5 +9,7 @@
     "authors" : [{% for author in post.authors %}{{ author | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],      
     "publishedDate" : {{ post.date | jsonify }},
     "content" : {{ post.content | markdownify | strip_html | normalize_whitespace | jsonify }},
+    "excerpt": {{ post.excerpt | json_escape | jsonify | remove: '\n' }},
+    "type": "post",
     {% if post.private %}"private" : true{% endif %}
   }{% unless forloop.last %},{% endunless %}{% endfor %}]

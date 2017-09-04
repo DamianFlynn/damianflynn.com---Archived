@@ -3,7 +3,7 @@ layout: default
 ---
 {% include post-image.html %}
 <div class="main-avatar">
-  <img src="{{ site.RIMdev[page.author].avatar }}&s=120" alt="{{ page.author }}" />
+  <img src="{{ site.Contributors[page.author].avatar }}&s=120" alt="{{ page.author }}" />
 </div>
 
 {% include masthead.html %}
@@ -14,16 +14,16 @@ layout: default
 
   <h1>{{ page.author }}</h1>
 
-  {% if site.RIMdev[page.author].desc %}
-    <p>{{ site.RIMdev[page.author].desc }}</p>
+  {% if site.Contributors[page.author].desc %}
+    <p>{{ site.Contributors[page.author].desc }}</p>
   {% endif %}
 
   <div class="social">
-    {% if site.RIMdev[page.author].twitter %}
-    <a href="https://twitter.com/{{ site.RIMdev[page.author].twitter }}" data-tooltip="{{ site.RIMdev[page.author].twitter | prepend: "@"}} on twitter" data-position="bottom right"><i class="icon twitter big"></i></a>
+    {% if site.Contributors[page.author].twitter %}
+    <a href="https://twitter.com/{{ site.Contributors[page.author].twitter }}" data-tooltip="{{ site.Contributorsv[page.author].twitter | prepend: "@"}} on twitter" data-position="bottom right"><i class="icon twitter big"></i></a>
     {% endif %}
-    {% if site.RIMdev[page.author].github %}
-    <a href="https://github.com/{{ site.RIMdev[page.author].github }}" data-tooltip="{{ site.RIMdev[page.author].github }} on github" data-position="bottom left"><i class="icon github alternate big"></i></a>
+    {% if site.Contributors[page.author].github %}
+    <a href="https://github.com/{{ site.Contributors[page.author].github }}" data-tooltip="{{ site.Contributors[page.author].github }} on github" data-position="bottom left"><i class="icon github alternate big"></i></a>
     {% endif %}
   </div>
 
