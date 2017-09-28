@@ -5,7 +5,7 @@
   </div>
 
   <div class="logo">
-    <a href="{{ site.url }}">
+    <a href="/">
       <img src="/images/logos/sitelogo.svg" alt="{{ site.user_description }}" />
     </a>
   </div>
@@ -40,7 +40,7 @@
         </author>
         <p>{{ post.content | truncate:500 | markdownify | strip_html | truncate:140 }}</p>
         {% for tags in post.tags %}
-        <a class="ui basic label orange tiny" href="{{ site.url }}/tags/#{{ tags }}" title="{{ tags }}">{{ tags }}</a>
+        <a class="ui basic label orange tiny" href="/tags/#{{ tags }}" title="{{ tags }}">{{ tags }}</a>
         {% endfor %}
 
         <div class="read-now">

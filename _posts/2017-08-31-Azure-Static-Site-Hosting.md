@@ -111,47 +111,47 @@ With the storage now in place, we can proceed to upload the site content to the 
 
 # Copy all CSS files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "text/css" --pattern "*.css"
 
 # Copy all PNG images
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "image/png" --pattern "*.png"
 
 # Copy all GIF images
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "image/gif" --pattern "*.gif"
 
 # Copy all JPG images
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "image/jpg" --pattern "*.jpg"
 
 # Copy all HTML files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "text/html" --pattern "*.html"
 
 # Copy all JavaScript files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "application/javascript" --pattern "*.js"
 
 # Copy all XML files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "text/xml" --pattern "*.xml"
 
 # Copy all Icon files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "image/x-icon" --pattern "*.ico"
 
 # Copy all ZIP files
 az storage blob upload-batch --connection-string $azStorageConnection \
---destination $azStorageContainerName --source public/ \
+--destination $azStorageContainerName --source ~/clouddrive/blog/ \
 --content-type "application/zip" --pattern "*.zip"
 
 # ... Continue doing this for other file types
