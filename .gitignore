@@ -1,10 +1,10 @@
-.DS_Store
+_site/
+.bundle/
+.sass-cache/
+.vscode/
+.DS_Store/
 node_modules
 build
 npm-debug.log
-_site
-.sass-cache
-.vscode/*
-.bundle/*
 .jekyll-metadata
 GemFile.lock
