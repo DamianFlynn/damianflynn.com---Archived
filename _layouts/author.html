@@ -12,7 +12,7 @@ layout: default
 <div class="ui vertical stripe segment authors-page">
   <div class="ui middle aligned stackable text container">
 
-  <h1>{{ page.author }}</h1>
+  <h1><a href="/about/" data-tooltip="Learn More About Damian" data-position="bottom right">{{ page.author }}</a></h1>
 
   {% if site.Contributors[page.author].desc %}
     <p>{{ site.Contributors[page.author].desc }}</p>
