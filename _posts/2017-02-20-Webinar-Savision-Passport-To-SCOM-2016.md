@@ -7,7 +7,7 @@ title: Passport To SCOM 2016, Savision Webinar
 event: Savision Webinar
 location: Webinar
 eventdate: 2017-02-23
-image: Savision_banner.jpg
+image: /images/events/webinars.png
 date: 2017-01-19 17:42:00
 categories:
 - Announcements

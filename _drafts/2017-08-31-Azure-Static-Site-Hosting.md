@@ -1,21 +1,13 @@
 ---
 authors: Damian Flynn
 comments: true
-date: 2016-10-31 20:30:00
-layout: event
-description: Netherlands WMUG Webinar
-title: "WMUG Webinar"
-event: WMUG Webinar 2016
-location: Webinar
-eventdate: 2017-08-31
-image: WMUG_banner.jpg
+date: 2017-08-31 20:30:00
+layout: post
+description: Azure Staic Site Hosting Sample
+title: "Static Site Hosting On Azure"
 categories:
 - IT Pro/DevOps
 tags:
-- Service Management Automation
-- SMA
-- Windows Azure Pack
-- Windows Azure Stack
 - Continous Deployment
 - DevOps
 ---
