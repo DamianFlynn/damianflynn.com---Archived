@@ -22,7 +22,7 @@ kramdown:
 
 # Plugins
 # sitemap: false in front matter of page to exclude
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-redirect-from
   - jekyll-seo-tag
@@ -52,11 +52,11 @@ shortener:
   preserve: false      # Keep previously generated files.
   salt:     "Damian"   # The optional salt, used when hasing the Unix time.
 
-# RIMdev posting authors
+# Posting authors
 Contributors:
   Damian Flynn:
     avatar: https://avatars2.githubusercontent.com/u/6288143?v=3
-    title: Incubation Team, Architect
+    title: Senior Principal Consultant, Cloud Architect
     desc: Focused on Making Incrediable Technology, Increadibly Simple.
     twitter: damian_flynn
     github: damianflynn

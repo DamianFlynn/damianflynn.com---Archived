@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Adding Mermaid support to the site"
-date: 2017-06-23 15:25:51
+date: 2017-06-26 15:25:51
 tags:
 - Jekyll
 categories:

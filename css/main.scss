@@ -16,9 +16,10 @@ $color-green:    #22bbaf;
 $color-grey:     #454545;
 $color-blue:     cadetblue;
 $color-blue-rgba: rgba($color-blue, 0.9);
-$color-blue-bright: lighten(dodgerblue, 20%);
+$color-blue-bright: lighten(darkgreen, 20%);
 $color-orange:   orange;
 $color-darkblue: #022c4c;
+$color-red:     lighten(tomato, 7%);
 
 // Frehness scale
 $new:     limegreen;
@@ -60,7 +61,7 @@ $font-headline: "Roboto slab", serif;
 // Load code and syntax
 @import "code";
 // @import "syntax-highlighting";
-@import "solarized-light";
+@import "solarized-dark";
 
 //Load layout
 @import "layout";
@@ -85,3 +86,5 @@ $font-headline: "Roboto slab", serif;
 @import "video";
 @import "custom";
 @import "search-modal";
+@import "forms";
+@import "demo";

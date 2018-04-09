@@ -1,14 +1,14 @@
 ---
 authors: Damian Flynn
 comments: true
-date: 2016-11-01 10:30:00
+date: 2017-08-01 10:30:00
 layout: event
 description: Experts Live 2017 (EU)
 title: "Experts Live 2017 Europe"
 event: Experts Live 2017 Europe
 location: Messe, Berlin, Germany
 eventdate: 2017-08-23
-image: SCU2017_banner.jpg
+image: /images/events/expertslive_banner.jpg
 categories:
 - Announcements
 - Events
