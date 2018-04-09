@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Scaffolding 101 - Network Foundations"
-date: 2018-04-04 18:25:51
+date: 2018-04-19 18:25:51
 tags:
 - Azure
 - Resource Manager
